@@ -1,0 +1,118 @@
+#2.2 Naturaleza de las cadenas de python
+
+# 1. cadenas y longitud
+# las cadenas son secuencias inmutables (no se pueden modificar
+# directamente). len() devuelve el numero de caracteres.
+
+s = "hi"
+print("longitud de 'hi':", len(s))
+
+empty = ""
+print("longitud de cadena vacia:", len(empty))
+
+# \n es un caracter especial de salto de linea y cuenta como 1
+print("longitud de '\\n\\n\\n':", len("\n\n\n"))
+
+
+# ------------------------------------------------------------
+# 2. cadenas multilinea
+# se pueden crear usando comillas triples
+
+multiline = """Linea 1
+Linea 2"""
+
+print("\ntexto multilinea:")
+print(multiline)
+print("longitud:", len(multiline))
+
+
+# ------------------------------------------------------------
+# 3. operaciones con cadenas
+# concatenacion (+) y replicacion (*)
+
+print("\noperaciones con cadenas:")
+
+print("ab" + "cd")   # une cadenas
+print("ha" * 3)      # repite cadena
+
+
+# ------------------------------------------------------------
+# 4. funciones ord() y chr()
+# ord() -> caracter a codigo
+# chr() -> codigo a caracter
+
+print("\nord y chr:")
+
+print("codigo de 'a':", ord("a"))
+print("caracter del codigo 97:", chr(97))
+
+
+# ------------------------------------------------------------
+# 5. cadenas como secuencias (indexacion)
+word = "python"
+
+print("\nindexacion:")
+print(word[0])   # primer caracter
+print(word[3])   # cuarto caracter
+print(word[-1])  # ultimo caracter
+
+
+# ------------------------------------------------------------
+# 6. iterar sobre una cadena
+
+print("\niterando caracteres:")
+for ch in "code":
+    print(ch)
+
+
+# ------------------------------------------------------------
+# 7. rebanadas (slicing)
+
+text = "abcdefg"
+
+print("\nrebanadas:")
+print(text[1:3])   # bc
+print(text[:4])    # abcd
+print(text[::2])   # a c e g
+
+
+# ------------------------------------------------------------
+# 8. operadores in y not in
+print("\noperadores in:")
+print("a" in "apple")     # True
+print("z" in "apple")     # False
+print("z" not in "apple") # True
+
+
+# ------------------------------------------------------------
+# 9. cadenas son inmutables
+# no se puede cambiar un caracter directamente
+
+alphabet = "abc"
+
+# esto daria error:
+# alphabet[0] = "z"
+
+# la forma correcta es crear una nueva cadena
+alphabet = "z" + alphabet[1:]
+print("\ncadena modificada:", alphabet)
+
+
+# ------------------------------------------------------------
+# 10. funciones utiles para cadenas
+
+s = "banana"
+
+print("\nfunciones utiles:")
+
+print("min:", min(s))      # caracter con menor codigo
+print("max:", max(s))      # caracter con mayor codigo
+print("index de 'n':", s.index("n"))
+print("conteo de 'a':", s.count("a"))
+
+
+# ------------------------------------------------------------
+# 11. convertir cadena a lista
+
+letters = list("hello")
+print("\ncadena a lista:", letters)
