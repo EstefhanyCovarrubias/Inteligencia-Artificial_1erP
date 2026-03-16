@@ -1,0 +1,151 @@
+#2.3 Herramientas para la manipulación de datos
+
+
+# Python como calculadora
+
+print("2.3.1 ¿Por qué se dice que Python puede funcionar como una calculadora?")
+print("Porque puede realizar operaciones matemáticas directamente dentro de print().")
+
+# Ejemplo simple
+# Python calcula la operación antes de imprimir el resultado
+print("Ejemplo de cálculo con Python:")
+print(2 + 2)
+
+# -----------------------------------------------------
+# Operadores básicos
+
+print("2.3.2 ¿Qué es un operador en Python?")
+print("Es un símbolo que permite realizar operaciones con valores.")
+
+print("¿Cuáles son algunos operadores aritméticos en Python?")
+print("+, -, *, /, //, %, **")
+
+# -----------------------------------------------------
+# Exponente
+
+print("¿Qué hace el operador ** ?")
+print("Eleva un número a la potencia de otro.")
+
+# Ejemplo de potencia
+print("Ejemplo de potencia:")
+print(2 ** 3)
+
+# Nota importante:
+# Si ambos números son enteros el resultado es entero.
+# Si uno es flotante, el resultado también será flotante.
+
+# -----------------------------------------------------
+# Multiplicación
+
+print("¿Qué operador se usa para multiplicar?")
+print("El asterisco *.")
+
+print("Ejemplo de multiplicación:")
+print(3 * 4)
+
+# -----------------------------------------------------
+# División
+
+print("¿Qué operador se usa para dividir?")
+print("La diagonal /.")
+
+# IMPORTANTE:
+# El resultado de / SIEMPRE es flotante, aunque el resultado sea exacto
+print("Ejemplo de división:")
+print(4 / 2)
+
+# -----------------------------------------------------
+# División entera
+
+print("¿Qué es la división entera?")
+print("Es una división que elimina la parte decimal y redondea hacia abajo.")
+
+# El operador // se llama "floor division"
+print("Ejemplo de división entera:")
+print(7 // 2)
+
+# Nota importante:
+# Siempre redondea hacia el entero inferior más cercano
+print("Ejemplo con números negativos:")
+print(-3 // 2)
+
+# -----------------------------------------------------
+# Residuo o módulo
+
+print("¿Qué hace el operador %?")
+print("Devuelve el residuo de una división.")
+
+# Ejemplo:
+print("Ejemplo de residuo:")
+print(14 % 4)
+
+# Explicación del ejemplo:
+# 14 // 4 = 3
+# 3 * 4 = 12
+# 14 - 12 = 2 (residuo)
+
+# -----------------------------------------------------
+# Suma
+
+print("¿Qué operador se usa para sumar?")
+print("El signo +.")
+
+print("Ejemplo de suma:")
+print(5 + 3)
+
+# -----------------------------------------------------
+# Resta
+
+print("¿Qué operador se usa para restar?")
+print("El signo -.")
+
+print("Ejemplo de resta:")
+print(10 - 4)
+
+# -----------------------------------------------------
+# Operadores unarios y binarios
+
+print("¿Qué es un operador binario?")
+print("Es un operador que trabaja con dos valores, como 4 + 5.")
+
+print("¿Qué es un operador unario?")
+print("Es un operador que trabaja con un solo valor, como -5.")
+
+# Ejemplo de operador unario
+print("Ejemplo de operador unario:")
+print(-8)
+
+# -----------------------------------------------------
+# Prioridad de operadores
+
+print("2.3.3 ¿Qué es la prioridad de operadores?")
+print("Es el orden en que Python realiza las operaciones en una expresión.")
+
+print("Ejemplo de prioridad:")
+print(2 + 3 * 5)
+
+# Primero se realiza la multiplicación y después la suma
+
+# -----------------------------------------------------
+# Enlazado de operadores
+
+print("¿Qué es el enlazado de operadores?")
+print("Es la dirección en que se evalúan operadores con la misma prioridad.")
+
+# La mayoría se evalúan de izquierda a derecha
+print("Ejemplo de enlazado izquierdo:")
+print(9 % 6 % 2)
+
+# Excepción importante:
+# El operador ** se evalúa de derecha a izquierda
+print("Ejemplo de enlazado derecho con potencia:")
+print(2 ** 3 ** 2)
+
+# -----------------------------------------------------
+# Uso de paréntesis
+
+print("¿Para qué sirven los paréntesis en expresiones?")
+print("Permiten cambiar el orden en que se realizan las operaciones.")
+
+print("Ejemplo con paréntesis:")
+print((2 + 3) * 5)
