@@ -1,0 +1,284 @@
+# 3.4 Métodos y constructores en Python
+
+
+# -----------------------------------
+# Métodos básicos
+class Classy:
+    def method(self, par):
+        """
+        Método normal:
+        - 'self' permite acceder al objeto que invoca el método.
+        - par: argumento adicional que se pasa al método.
+        """
+        print("método:", par)
+
+# Crear objeto
+obj = Classy()
+obj.method(1)
+obj.method(2)
+obj.method(3)
+# Output:
+# método: 1
+# método: 2
+# método: 3
+
+# -----------------------------------
+# Acceso a variables de clase y de instancia
+class Classy2:
+    varia = 2  # Variable de clase
+
+    def method(self):
+        # 'self.var' será una variable de instancia agregada fuera de la clase
+        print(self.varia, self.var)
+
+obj2 = Classy2()
+obj2.var = 3  # Variable de instancia agregada dinámicamente
+obj2.method()
+# Output: 2 3
+
+# -----------------------------------
+# Invocación de otros métodos dentro de la clase
+
+class Classy3:
+    def other(self):
+        print("otro")
+
+    def method(self):
+        print("método")
+        self.other()  # Llamada a otro método usando self
+
+obj3 = Classy3()
+obj3.method()
+# Output:
+# método
+# otro
+
+# -----------------------------------
+# Constructor (__init__)
+
+class ExampleConstructor:
+    def __init__(self, val="objeto"):
+        """
+        Constructor:
+        - Se invoca automáticamente al crear un objeto.
+        - No devuelve valores.
+        - Se usa para inicializar variables de instancia.
+        """
+        self.val = val
+
+obj4 = ExampleConstructor()
+print(obj4.val)  # Output: objeto
+
+# Constructor con argumento por defecto
+obj5 = ExampleConstructor("nuevo objeto")
+print(obj5.val)  # Output: nuevo objeto
+
+# -----------------------------------
+# 5. Métodos y variables privadas
+# -----------------------------------
+class ClassyPrivate:
+    def visible(self):
+        print("visible")
+
+    def __hidden(self):
+        print("oculto")
+
+obj6 = ClassyPrivate()
+obj6.visible()  # Output: visible
+
+try:
+    obj6.__hidden()  # Fallará, método privado
+except:
+    print("fallido")  # Output: fallido
+
+# Acceso a método privado con name mangling
+obj6._ClassyPrivate__hidden()  # Output: oculto
+
+# -----------------------------------
+# 6. Propiedades útiles de clases y objetos
+# -----------------------------------
+print("obj.__dict__:", obj6.__dict__)  # Diccionario de variables de instancia
+print("Clase __name__:", ClassyPrivate.__name__)  # Nombre de la clase
+print("Clase __module__:", ClassyPrivate.__module__)  # Módulo de definición
+print("Clase __bases__:", ClassyPrivate.__bases__)  # Superclases
+
+# -----------------------------------
+# Introspección y reflexión
+class Introspect:
+    def __init__(self):
+        self.a = 1
+        self.integer = 4
+        self.b = 2
+        self.i = 3
+        self.z = 5
+        self.ireal = 3.5
+
+def incIntsI(obj):
+    """
+    Función que incrementa todos los atributos enteros cuyo
+    nombre comienza con 'i' en el objeto recibido.
+    """
+    print("Antes:", obj.__dict__)
+    for attr in obj.__dict__:
+        if attr.startswith('i'):
+            val = getattr(obj, attr)  # Obtener valor dinámicamente
+            if isinstance(val, int):
+                setattr(obj, attr, val + 1)  # Incrementar valor
+    print("Después:", obj.__dict__)
+
+obj_int = Introspect()
+incIntsI(obj_int)
+# Output:
+# Antes: {...}
+# Después: {... con 'i' incrementados en 1}
+
+# ===================================================
+# CUESTIONARIO DE MÉTODOS
+# Pregunta 1: Método increment()
+class Snake:
+    def __init__(self):
+        self.victims = 0  # Variable de instancia
+
+    def increment(self):
+        self.victims += 1
+
+snake1 = Snake()
+snake1.increment()
+print("Victims:", snake1.victims)  # Output: 1
+
+# Pregunta 2: Constructor con parámetro
+class Snake2:
+    def __init__(self, victims=0):
+        self.victims = victims
+
+snake2 = Snake2(5)
+print("Victims inicial:", snake2.victims)  # Output: 5
+
+# Pregunta 3: Herencia y __name__ y __bases__
+class SnakeBase:
+    pass
+
+class Python(SnakeBase):
+    pass
+
+print(Python.__name__, "es una", SnakeBase.__name__)
+print(Python.__bases__[0].__name__, "puede ser una", Python.__name__)
+# Output:
+# Python es una SnakeBase
+# SnakeBase puede ser una Python
+
+# ===================================================
+# LAB: Clase Timer
+def format_time(h, m, s):
+    """Función auxiliar para formatear hh:mm:ss"""
+    return f"{h:02d}:{m:02d}:{s:02d}"
+
+class Timer:
+    def __init__(self, hours=0, minutes=0, seconds=0):
+        self.__hours = hours
+        self.__minutes = minutes
+        self.__seconds = seconds
+
+    def __str__(self):
+        return format_time(self.__hours, self.__minutes, self.__seconds)
+
+    def next_second(self):
+        self.__seconds += 1
+        if self.__seconds > 59:
+            self.__seconds = 0
+            self.__minutes += 1
+            if self.__minutes > 59:
+                self.__minutes = 0
+                self.__hours += 1
+                if self.__hours > 23:
+                    self.__hours = 0
+
+    def previous_second(self):
+        self.__seconds -= 1
+        if self.__seconds < 0:
+            self.__seconds = 59
+            self.__minutes -= 1
+            if self.__minutes < 0:
+                self.__minutes = 59
+                self.__hours -= 1
+                if self.__hours < 0:
+                    self.__hours = 23
+
+t = Timer(23, 59, 59)
+print(t)  # 23:59:59
+t.next_second()
+print(t)  # 00:00:00
+t.previous_second()
+print(t)  # 23:59:59
+
+# ===================================================
+# LAB: Clase Weeker
+
+class WeekDayError(Exception):
+    pass
+
+class Weeker:
+    __days = ["Lun", "Mar", "Mie", "Jue", "Vie", "Sab", "Dom"]
+
+    def __init__(self, day):
+        if day not in Weeker.__days:
+            raise WeekDayError("Día inválido")
+        self.__day_index = Weeker.__days.index(day)
+
+    def __str__(self):
+        return Weeker.__days[self.__day_index]
+
+    def add_days(self, n):
+        self.__day_index = (self.__day_index + n) % 7
+
+    def subtract_days(self, n):
+        self.__day_index = (self.__day_index - n) % 7
+
+w = Weeker("Lun")
+print(w)  # Lun
+w.add_days(1)
+print(w)  # Mar
+w.subtract_days(3)
+print(w)  # Dom
+
+# ===================================================
+# LAB: Clase Point
+from math import hypot
+
+class Point:
+    def __init__(self, x=0.0, y=0.0):
+        self.__x = float(x)
+        self.__y = float(y)
+
+    def getx(self):
+        return self.__x
+
+    def gety(self):
+        return self.__y
+
+    def distance_from_xy(self, x, y):
+        return hypot(self.__x - x, self.__y - y)
+
+    def distance_from_point(self, point):
+        return hypot(self.__x - point.getx(), self.__y - point.gety())
+
+p1 = Point(0,0)
+p2 = Point(1,1)
+print(p1.distance_from_xy(1,1))  # 1.4142135623730951
+print(p1.distance_from_point(p2))  # 1.4142135623730951
+
+# ===================================================
+# LAB: Clase Triangle
+
+class Triangle:
+    def __init__(self, p1, p2, p3):
+        self.__points = [p1, p2, p3]
+
+    def perimeter(self):
+        a = self.__points[0].distance_from_point(self.__points[1])
+        b = self.__points[1].distance_from_point(self.__points[2])
+        c = self.__points[2].distance_from_point(self.__points[0])
+        return a + b + c
+
+tri = Triangle(Point(0,0), Point(1,0), Point(1,1))
+print(tri.perimeter())  # 3.414213562373095
