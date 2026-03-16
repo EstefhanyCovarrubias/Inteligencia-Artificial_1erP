@@ -1,0 +1,86 @@
+#3.5 Ordenamiento de listas: Algoritmo Burbuja
+
+# -----------------------------------------------------
+# Lista inicial que vamos a ordenar
+
+my_list = [8, 10, 6, 2, 4]
+
+print("Lista original:", my_list)
+
+
+# -----------------------------------------------------
+# Un solo paso del ordenamiento burbuja
+# Compara elementos adyacentes y los intercambia
+
+for i in range(len(my_list) - 1):  # recorremos la lista
+    if my_list[i] > my_list[i + 1]:  # si el elemento actual es mayor que el siguiente
+        # intercambiamos los valores
+        my_list[i], my_list[i + 1] = my_list[i + 1], my_list[i]
+
+print("Lista después de un paso:", my_list)
+
+
+# -----------------------------------------------------
+# Ordenamiento burbuja completo
+# Usamos un bucle while para repetir los pasos
+# hasta que la lista quede ordenada
+
+my_list = [8, 10, 6, 2, 4]  # reiniciamos la lista
+
+swapped = True  # sirve para saber si hubo intercambios
+
+while swapped:
+    swapped = False  # asumimos que no habrá intercambios
+
+    for i in range(len(my_list) - 1):
+        if my_list[i] > my_list[i + 1]:
+            # si están en orden incorrecto los intercambiamos
+            my_list[i], my_list[i + 1] = my_list[i + 1], my_list[i]
+            swapped = True  # indicamos que hubo un cambio
+
+print("Lista ordenada con burbuja:", my_list)
+
+
+# -----------------------------------------------------
+# Versión interactiva
+# El usuario introduce los números a ordenar
+
+numbers = []
+
+n = int(input("¿Cuántos números quieres ordenar? "))
+
+for i in range(n):
+    value = int(input("Introduce un número: "))
+    numbers.append(value)
+
+swapped = True
+
+while swapped:
+    swapped = False
+    for i in range(len(numbers) - 1):
+        if numbers[i] > numbers[i + 1]:
+            numbers[i], numbers[i + 1] = numbers[i + 1], numbers[i]
+            swapped = True
+
+print("Lista ordenada:", numbers)
+
+
+# -----------------------------------------------------
+#Ordenar usando el método integrado de Python
+# Mucho más rápido que bubble sort
+
+my_list = [8, 10, 6, 2, 4]
+
+my_list.sort()  # ordena automáticamente
+
+print("Lista ordenada con sort():", my_list)
+
+
+# -----------------------------------------------------
+# Invertir una lista con reverse()
+
+my_list = [8, 10, 6, 2, 4]
+
+my_list.reverse()
+
+print("Lista invertida:", my_list)
