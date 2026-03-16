@@ -1,0 +1,130 @@
+#1.2 Módulos Selectos de Python (math, random, platform)
+# -----------------------------------------------------
+# teoria básica: módulos math, random y platform
+# -----------------------------------------------------
+# un módulo en python es un archivo que contiene funciones y herramientas
+# ya hechas que podemos reutilizar. para usar un módulo se utiliza "import".
+# ejemplo: import math
+
+import math
+import random
+import platform
+
+# -----------------------------------------------------
+# funcion dir()
+# dir(modulo) muestra todos los nombres disponibles dentro del módulo,
+# como funciones, constantes y variables. devuelve una lista ordenada.
+print("contenido del módulo math:")
+print(dir(math))
+
+
+# -----------------------------------------------------
+# módulo math (funciones matemáticas)
+
+print("\nvalor de pi:", math.pi)  # constante que representa π
+
+# las funciones trigonométricas en python usan radianes y no grados
+# radians() convierte grados a radianes para poder usar sin(), cos(), tan()
+angulo = math.radians(90)
+
+print("seno de 90 grados:", math.sin(angulo))
+print("coseno de 90 grados:", math.cos(angulo))
+print("tangente de 90 grados:", math.tan(angulo))
+
+# sqrt() calcula la raíz cuadrada
+print("raíz cuadrada de 16:", math.sqrt(16))
+
+# log() calcula el logaritmo natural (base e)
+print("logaritmo natural de 10:", math.log(10))
+
+# factorial(x) calcula x! (multiplicación de todos los enteros anteriores)
+print("factorial de 5:", math.factorial(5))
+
+# ceil redondea hacia arriba al entero más cercano
+print("ceil de 4.3:", math.ceil(4.3))
+
+# floor redondea hacia abajo al entero más cercano
+print("floor de 4.7:", math.floor(4.7))
+
+
+# -----------------------------------------------------
+# módulo random (números pseudoaleatorios)
+# los números generados no son realmente aleatorios,
+# se calculan mediante algoritmos llamados generadores pseudoaleatorios
+
+# random() genera un número decimal entre 0 y 1
+print("\nnúmero aleatorio entre 0 y 1:", random.random())
+
+# randint genera un número entero entre dos valores incluyendo ambos
+print("entero aleatorio entre 1 y 10:", random.randint(1, 10))
+
+numeros = [1, 2, 3, 4, 5, 6]
+
+# choice elige un elemento aleatorio de una lista
+print("elemento aleatorio de la lista:", random.choice(numeros))
+
+# sample elige varios elementos aleatorios sin repetirlos
+# el segundo parámetro indica cuántos elementos queremos
+print("3 elementos aleatorios sin repetir:", random.sample(numeros, 3))
+
+
+# -----------------------------------------------------
+# módulo platform (información del sistema)
+# este módulo permite saber información del sistema donde se ejecuta python
+
+# system() devuelve el nombre del sistema operativo
+print("\nsistema operativo:", platform.system())
+
+# machine() devuelve la arquitectura del procesador
+print("arquitectura del procesador:", platform.machine())
+
+# processor() intenta mostrar el nombre real del procesador
+print("procesador:", platform.processor())
+
+# python_version() muestra la versión de python instalada
+print("versión de python:", platform.python_version())
+
+# platform() devuelve un resumen completo del sistema
+print("información completa del sistema:", platform.platform())
+
+#------------------------------------------------------------------
+#Mas práctico
+#------------------------------------------------------------------
+import math
+import random
+import platform
+
+# ver todo lo que contiene el módulo math
+print("contenido del módulo math:")
+print(dir(math))
+
+print("\nvalor de pi:", math.pi)
+
+# las funciones trigonométricas usan radianes, por eso convertimos 90 grados
+angulo = math.radians(90)
+print("seno de 90 grados:", math.sin(angulo))
+
+print("raíz cuadrada de 16:", math.sqrt(16))
+print("logaritmo natural de 10:", math.log(10))
+print("factorial de 5:", math.factorial(5))
+
+print("ceil de 4.3:", math.ceil(4.3))   # redondea hacia arriba
+print("floor de 4.7:", math.floor(4.7)) # redondea hacia abajo
+
+
+print("\nnúmero aleatorio entre 0 y 1:", random.random())
+print("entero aleatorio entre 1 y 10:", random.randint(1, 10))
+
+numeros = [1, 2, 3, 4, 5, 6]
+
+print("elemento aleatorio de la lista:", random.choice(numeros))
+
+# sample elige varios elementos sin repetir
+print("3 elementos aleatorios:", random.sample(numeros, 3))
+
+
+print("\nsistema operativo:", platform.system())
+print("arquitectura del procesador:", platform.machine())
+print("procesador:", platform.processor())
+print("versión de python:", platform.python_version())
+print("información completa del sistema:", platform.platform())
