@@ -1,0 +1,134 @@
+#3.1 Los fundamentos de POO 
+
+# En Python las excepciones sirven para manejar errores durante
+# la ejecución del programa sin que el programa se detenga.
+
+# ---------------------------------------------------------
+# EJEMPLO 1: IndexError
+# Ocurre cuando intentamos acceder a un índice que no existe
+# en una lista.
+# ---------------------------------------------------------
+
+lista = [10, 20, 30, 40]
+indice = 0
+
+try:
+    while True:
+        print(lista[indice])
+        indice += 1
+except IndexError:  # Error cuando el índice supera el tamaño de la lista
+    print("Fin de la lista")
+
+
+# ---------------------------------------------------------
+# EJEMPLO 2: KeyError
+# Ocurre cuando intentamos acceder a una clave inexistente
+# dentro de un diccionario.
+# ---------------------------------------------------------
+
+diccionario = {"a": "b", "b": "c", "c": "d"}
+letra = "a"
+
+try:
+    while True:
+        letra = diccionario[letra]
+        print(letra)
+except KeyError:  # Se ejecuta cuando la clave no existe
+    print("No existe esa clave en el diccionario")
+
+
+# ---------------------------------------------------------
+# EJEMPLO 3: AssertionError
+# La instrucción assert verifica que una condición sea verdadera.
+# Si es falsa se genera una excepción.
+# ---------------------------------------------------------
+
+from math import tan, radians
+
+try:
+    angulo = int(input("Ingresa un angulo entero: "))
+    assert angulo % 180 != 90  # evita valores donde la tangente es indefinida
+    print("Resultado:", tan(radians(angulo)))
+except AssertionError:
+    print("Error: ese angulo no es permitido")
+
+
+# ---------------------------------------------------------
+# LAB: LEER ENTEROS DE MANERA SEGURA
+# La función valida que el número sea entero y esté en rango
+# ---------------------------------------------------------
+
+def leer_entero(mensaje, minimo, maximo):
+
+    while True:
+        try:
+            valor = int(input(mensaje))  # intenta convertir a entero
+
+            if valor < minimo or valor > maximo:
+                print(f"Error: el valor no está dentro del rango permitido ({minimo}..{maximo})")
+                continue
+
+            return valor  # valor correcto
+
+        except ValueError:  # ocurre si el usuario escribe texto
+            print("Error: entrada incorrecta")
+
+
+numero = leer_entero("Ingresa un numero entre -10 y 10: ", -10, 10)
+print("El numero es:", numero)
+
+
+# =========================================================
+# PROGRAMACION ORIENTADA A OBJETOS (POO)
+# En POO los datos y las funciones se agrupan dentro de CLASES.
+# Una clase es como una plantilla para crear objetos.
+# ---------------------------------------------------------
+# CLASE BASICA
+
+class Vehiculo:
+    # metodo constructor que define propiedades iniciales del objeto
+    def __init__(self, marca, color):
+        self.marca = marca
+        self.color = color
+
+    # metodo del objeto (actividad que puede realizar)
+    def mover(self):
+        print("El vehiculo se esta moviendo")
+
+
+# ---------------------------------------------------------
+# HERENCIA
+# Una subclase puede heredar propiedades y métodos
+# de una clase padre.
+# ---------------------------------------------------------
+
+class Auto(Vehiculo):
+
+    def tocar_claxon(self):
+        print("Beep beep!")
+
+
+# ---------------------------------------------------------
+# CREACION DE OBJETOS (INSTANCIAS)
+mi_auto = Auto("Toyota", "Rojo")
+
+# usamos las propiedades heredadas
+print("Marca:", mi_auto.marca)
+print("Color:", mi_auto.color)
+
+# usamos los métodos
+mi_auto.mover()
+mi_auto.tocar_claxon()
+
+
+# ---------------------------------------------------------
+# CLASE MUY SIMPLE (EJEMPLO DEL TEXTO)
+
+class ClaseSimple:
+    pass  # clase vacía
+
+
+# crear un objeto de esa clase
+objeto = ClaseSimple()
+
+print("Objeto creado a partir de ClaseSimple")
