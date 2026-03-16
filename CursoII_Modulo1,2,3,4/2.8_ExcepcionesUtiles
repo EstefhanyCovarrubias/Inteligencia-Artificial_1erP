@@ -1,0 +1,100 @@
+#2.8 Excepciones utiles
+
+from math import tan, radians, exp
+
+
+# ------------------------------------------------------------
+# EJEMPLO 1: AssertionError (uso de assert)
+
+try:
+    angle = int(input("Ingresa un angulo en grados: "))
+
+    # assert verifica que el angulo no provoque error en tan()
+    assert angle % 180 != 90
+
+    print("Resultado:", tan(radians(angle)))
+
+except AssertionError:
+    print("Error: el angulo produce una tangente indefinida.")
+
+
+print("\n--- ejemplo terminado ---\n")
+
+
+# ------------------------------------------------------------
+# EJEMPLO 2: IndexError (indice fuera de rango)
+
+lista = [1, 2, 3, 4, 5]
+i = 0
+
+try:
+    while True:
+        # cuando el indice excede la lista ocurre IndexError
+        print(lista[i])
+        i += 1
+
+except IndexError:
+    print("Fin de la lista.")
+
+
+print("\n--- ejemplo terminado ---\n")
+
+
+# ------------------------------------------------------------
+# EJEMPLO 3: KeyError (clave inexistente en diccionario)
+
+dic = {'a': 'b', 'b': 'c', 'c': 'd'}
+ch = 'a'
+
+try:
+    while True:
+        ch = dic[ch]   # si la clave no existe ocurre KeyError
+        print(ch)
+
+except KeyError:
+    print("No existe la clave:", ch)
+
+
+print("\n--- ejemplo terminado ---\n")
+
+
+# ------------------------------------------------------------
+# EJEMPLO 4: OverflowError (numero demasiado grande)
+
+ex = 1
+
+try:
+    while True:
+        print(exp(ex))
+        ex *= 2
+
+except OverflowError:
+    print("El numero es demasiado grande.")
+
+
+print("\n--- ejemplo terminado ---\n")
+
+
+# ------------------------------------------------------------
+# LABORATORIO: leer enteros de forma segura
+
+def read_int(prompt, min_val, max_val):
+    while True:
+        try:
+            value = int(input(prompt))
+
+            # verificar que el numero este dentro del rango
+            if value < min_val or value > max_val:
+                print(f"Error: el valor no esta dentro del rango permitido ({min_val}..{max_val})")
+                continue
+
+            return value  # numero valido
+
+        except ValueError:
+            # ocurre si el usuario escribe texto
+            print("Error: entrada incorrecta")
+
+
+# uso de la funcion
+numero = read_int("Ingresa un numero entre -10 a 10: ", -10, 10)
+print("El numero es:", numero)
