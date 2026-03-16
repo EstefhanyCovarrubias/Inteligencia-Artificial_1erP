@@ -1,0 +1,124 @@
+#3.3 Operadores lógicos 
+
+# -----------------------------------------------------------
+#Operadores logicos
+# Sirven para combinar condiciones
+
+# AND → ambas condiciones deben ser True
+x = 5
+
+print(x > 2 and x < 10)  # True porque ambas condiciones se cumplen
+print(x > 10 and x < 20) # False porque la primera es falsa
+
+
+# OR → solo una condición debe ser True
+print(x > 2 or x > 10)   # True porque una condición es verdadera
+print(x > 10 or x > 20)  # False porque ambas son falsas
+
+
+# NOT → invierte el resultado
+print(not True)   # False
+print(not False)  # True
+
+
+# Ejemplo combinado
+edad = 20
+
+if edad >= 18 and edad < 65:
+    print("Adulto")
+
+
+# -----------------------------------------------------------
+#Expresiones logicas
+# Diferentes formas de escribir lo mismo
+var = 1
+
+print(var > 0)
+print(not (var <= 0))  # hace exactamente lo mismo
+
+print(var != 0)
+print(not (var == 0))  # también es equivalente
+
+
+# -----------------------------------------------------------
+# Valores logicos (True y False)
+
+i = 1
+j = not not i   # convierte cualquier valor distinto de 0 en True
+
+print(j)  # True
+
+
+# ----------------------------------------------------------
+# Operadores bit a bit
+# Trabajan con cada bit de un número
+
+x = 15  # 00001111 en binario
+y = 16  # 00010000 en binario
+
+print(x & y)  # AND bit a bit
+print(x | y)  # OR bit a bit
+print(~x)     # NOT bit a bit
+print(x ^ y)  # XOR bit a bit
+
+
+# ------------------------------------------------------------
+# Significado de los operadores bit a bit
+
+# &  → AND (los dos bits deben ser 1)
+# |  → OR (al menos un bit debe ser 1)
+# ^  → XOR (solo uno debe ser 1)
+# ~  → NOT (invierte los bits)
+
+
+#---------------------------------------------------------------
+# Diferenia entre lógico y bit a bitDIFERENCIA ENTRE LÓGICO Y BIT A BIT
+
+i = 15
+j = 22
+
+log = i and j  # operación lógica
+bit = i & j    # operación bit a bit
+
+print(log)  # devuelve el valor lógico
+print(bit)  # devuelve el resultado en bits
+
+
+# ---------------------------------------------------------------
+# Trabajar con un bit especifico (mascaras) 
+
+
+flag_register = 0b00001000  # ejemplo de registro de bits
+
+the_mask = 8  # máscara para el tercer bit (2^3)
+
+
+# comprobar si el bit está activado
+if flag_register & the_mask:
+    print("El bit está en 1")
+else:
+    print("El bit está en 0")
+
+
+# apagar el bit
+flag_register = flag_register & ~the_mask
+
+
+# encender el bit
+flag_register = flag_register | the_mask
+
+
+# cambiar el bit (si es 1 pasa a 0, si es 0 pasa a 1)
+flag_register = flag_register ^ the_mask
+
+
+# --------------------------------------------
+# Desplazaminto de bits
+
+# << desplaza bits a la izquierda (multiplica por 2)
+# >> desplaza bits a la derecha (divide entre 2)
+
+x = 17
+
+print(x >> 1)  # divide entre 2
+print(x << 2)  # multiplica por 4
