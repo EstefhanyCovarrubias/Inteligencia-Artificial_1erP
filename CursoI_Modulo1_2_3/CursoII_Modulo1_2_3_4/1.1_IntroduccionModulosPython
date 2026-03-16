@@ -1,0 +1,116 @@
+#1.1 Introducción a los modulos en Python
+
+
+print("¿Por qué el código de un programa tiende a crecer con el tiempo?")
+print("Porque las necesidades de los usuarios cambian y el software debe actualizarse y mejorarse continuamente.")
+
+
+print("\n¿Por qué un código muy grande es más difícil de mantener?")
+print("Porque encontrar errores y modificarlo es más complicado cuando el programa tiene muchas líneas.")
+
+
+print("\n¿Qué se hace cuando un proyecto de software es muy grande?")
+print("Se divide en varias partes para que diferentes desarrolladores puedan trabajar en ellas.")
+
+
+print("\n¿Qué es la descomposición en programación?")
+print("Es dividir un proyecto grande en partes más pequeñas para facilitar su desarrollo.")
+
+
+print("\n¿Qué es un módulo en Python?")
+print("Es un archivo que contiene código reutilizable como funciones, variables o clases.")
+
+
+print("\n¿Para qué sirven los módulos?")
+print("Sirven para organizar el código y reutilizar funciones sin tener que escribirlas otra vez.")
+
+
+# -----------------------------------------------------
+# Biblioteca estándar
+
+print("\n¿Qué es la biblioteca estándar de Python?")
+print("Es una colección de módulos incluidos en Python que ofrecen funciones útiles.")
+
+
+# ------------------------------------------------------
+# Importar módulos
+
+print("\n¿Cómo se importa un módulo en Python?")
+print("Se utiliza la palabra clave import seguida del nombre del módulo.")
+
+
+import math  # importamos el módulo matemático
+
+
+print("\nEjemplo usando el módulo math")
+print("Valor de PI:", math.pi)
+
+print("Seno de PI/2:", math.sin(math.pi/2))
+
+
+# --------------------------------------------------------
+# NAMESPACE
+
+print("\n¿Qué es un namespace?")
+print("Es un espacio donde los nombres de variables o funciones son únicos y no se confunden.")
+
+
+# Podemos tener nuestras propias variables con el mismo nombre
+pi = 3
+sin = 0
+
+print("\nNuestro valor de pi:", pi)
+print("Nuestro valor de sin:", sin)
+
+# El del módulo sigue disponible usando math
+print("Pi del módulo math:", math.pi)
+
+
+# ------------------------------------------------------------
+# Importación selectiva
+
+print("\n¿Cómo importar solo algunas funciones de un módulo?")
+print("Usando la sintaxis: from modulo import elemento")
+
+
+from math import pi, sin
+
+print("Usando pi directamente:", pi)
+print("Usando sin directamente:", sin(pi/2))
+
+
+# --------------------------------------------------------------
+# Importar todo (*)
+
+print("\n¿Qué hace 'from modulo import *'?")
+print("Importa todas las funciones y variables del módulo al programa.")
+
+
+# Ejemplo (no recomendado en programas grandes)
+from math import *
+
+print("Coseno de PI:", cos(pi))
+
+
+# --------------------------------------------------------------
+# Alias (Renombrar módulos)ALIAS
+
+print("\n¿Qué es un alias en Python?")
+print("Es renombrar un módulo o función para usar un nombre más corto.")
+
+
+import math as m
+
+print("Usando alias m:", m.sin(m.pi/2))
+
+
+# -------------------------------------------------------------
+# Alias en funciones
+
+print("\n¿Se pueden renombrar funciones importadas?")
+print("Sí, usando la palabra clave 'as'.")
+
+
+from math import pi as PI, sin as seno
+
+print("Usando alias en funciones:", seno(PI/2))
