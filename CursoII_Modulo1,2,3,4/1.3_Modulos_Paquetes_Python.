@@ -1,0 +1,179 @@
+#1.3 Modulos y paquetes en python
+# =====================================================
+# teoria y práctica: módulos y paquetes en python
+
+# =====================================================
+# 1. ¿qué es un módulo?
+
+# un módulo en python es un archivo .py que contiene funciones,
+# variables o código reutilizable. sirve para organizar mejor
+# los programas y reutilizar código en otros proyectos.
+
+# por ejemplo: si tenemos un archivo llamado module.py
+# podemos importarlo desde otro archivo usando:
+
+# import module
+
+# python ejecuta automáticamente el código del módulo
+# cuando se importa por primera vez.
+
+
+# =====================================================
+# 2. variable especial __name__
+
+# python crea automáticamente una variable llamada __name__
+# en cada archivo que ejecuta.
+
+# si el archivo se ejecuta directamente:
+# __name__ = "__main__"
+
+# si el archivo se importa como módulo:
+# __name__ = nombre_del_modulo
+
+print("valor de __name__:", __name__)
+
+
+# este condicional permite saber si el archivo se ejecuta
+# directamente o si fue importado como módulo
+if __name__ == "__main__":
+    print("este archivo se está ejecutando directamente")
+else:
+    print("este archivo fue importado como módulo")
+
+
+# =====================================================
+# 3. ejemplo de funciones dentro de un módulo
+
+# contador para saber cuántas veces se usan las funciones
+_counter = 0   # el guion bajo indica que la variable es "privada"
+               # es solo una convención para que otros programadores
+               # sepan que no deberían modificarla
+
+
+def suml(the_list):
+    global _counter
+    _counter += 1
+
+    the_sum = 0
+    for element in the_list:
+        the_sum += element
+
+    return the_sum
+
+
+def prodl(the_list):
+    global _counter
+    _counter += 1
+
+    prod = 1
+    for element in the_list:
+        prod *= element
+
+    return prod
+
+
+# prueba de las funciones
+numbers = [1, 2, 3, 4, 5]
+
+print("\nsuma de la lista:", suml(numbers))
+print("producto de la lista:", prodl(numbers))
+print("veces que se usaron las funciones:", _counter)
+
+
+# =====================================================
+# 4. cómo python busca módulos
+# python busca los módulos en varias carpetas del sistema.
+# estas carpetas están almacenadas en una lista llamada sys.path
+
+import sys
+
+print("\nrutas donde python busca módulos:")
+for p in sys.path:
+    print(p)
+
+
+# podemos agregar nuevas rutas para que python encuentre
+# módulos ubicados en otras carpetas
+# append() agrega un nuevo elemento al final de la lista
+
+sys.path.append("C:\\mis_modulos")
+
+
+# =====================================================
+# 5. qué es un paquete
+
+# cuando tenemos muchos módulos, se pueden organizar
+# dentro de carpetas llamadas paquetes.
+
+# un paquete es básicamente una carpeta que contiene módulos.
+
+# para que python reconozca una carpeta como paquete
+# debe contener un archivo llamado:
+
+# __init__.py
+
+# este archivo puede estar vacío, pero indica que
+# esa carpeta es un paquete de python.
+
+
+# =====================================================
+# ejemplo de estructura de paquete
+
+#
+# extra/
+# ├── __init__.py
+# ├── iota.py
+# ├── good/
+# │   ├── __init__.py
+# │   ├── alpha.py
+# │   ├── beta.py
+# │   └── best/
+# │       ├── __init__.py
+# │       ├── sigma.py
+# │       └── tau.py
+#
+# =====================================================
+
+
+# =====================================================
+# 6. cómo importar módulos de un paquete
+
+
+# ejemplo de importación completa
+# import extra.good.best.sigma
+
+# ejemplo usando una función específica
+# from extra.good.best.tau import funT
+
+
+# =====================================================
+# 7. ejemplo simple simulando uso de paquetes
+
+# este ejemplo solo demuestra cómo sería la llamada
+# suponiendo que los paquetes existen
+
+print("\nejemplo de cómo se llamarían funciones de paquetes:")
+
+print("extra.good.best.sigma.funS()")
+print("extra.good.alpha.funA()")
+print("extra.iota.funI()")
+
+
+# =====================================================
+# 8. uso de alias en imports
+# los alias permiten acortar nombres largos
+
+# ejemplo:
+# import extra.good.best.sigma as sig
+
+# después se puede usar:
+# sig.funS()
+
+print("\nejemplo de alias:")
+print("import extra.good.best.sigma as sig")
+print("sig.funS()")
+
+
+# =====================================================
+# fin del ejemplo
+print("\nfin del programa de demostración")
