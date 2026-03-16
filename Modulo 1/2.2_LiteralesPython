@@ -1,0 +1,82 @@
+#2.2 Literales en Python
+
+# "# -----------------------------------------------------" en este caso nos sirve para hacer una separación entre temas
+print("¿Qué es un literal en Python?")
+print("Un literal es un valor fijo escrito directamente en el código, como números o cadenas.")
+
+print("¿Por qué 123 es un literal y 'c' no necesariamente?")
+print("Porque 123 representa directamente un número, mientras que 'c' puede representar distintos valores según el contexto.")
+
+# Python puede mostrar diferentes tipos de datos con print(),
+# aunque internamente los guarda de forma distinta en memoria.
+print("¿Cómo almacena Python los literales?")
+print("Las cadenas se guardan como texto y los números como representaciones binarias en memoria.")
+
+# -----------------------------------------------------
+
+print("¿Qué es un número entero en Python?")
+print("Es un número sin parte decimal, por ejemplo 10, -3 o 256.")
+
+print("¿Cómo se pueden escribir números grandes en Python?")
+print("Se pueden usar guiones bajos para mejorar la lectura, por ejemplo 1_000_000.")
+
+print("¿Cómo se representan números negativos y positivos?")
+print("Los negativos usan el signo -, y los positivos pueden usar + aunque no es obligatorio.")
+
+# Prefijo 0o indica que el número está escrito en base 8 (octal)
+print("¿Qué es un número octal?")
+print("Es un número base 8 escrito con el prefijo 0o, por ejemplo 0o123.")
+
+# Prefijo 0x indica que el número está escrito en base 16 (hexadecimal)
+print("¿Qué es un número hexadecimal?")
+print("Es un número base 16 escrito con el prefijo 0x, por ejemplo 0x123.")
+
+# -----------------------------------------------------
+
+print("¿Qué es un número flotante?")
+print("Es un número que tiene parte decimal, como 2.5 o -0.4.")
+
+# El punto decimal es lo que le indica a Python que el número es flotante
+print("¿Qué determina que un número sea flotante?")
+print("La presencia de un punto decimal en el número.")
+
+print("¿Cómo se escriben números muy grandes o muy pequeños?")
+print("Usando notación científica con e o E, por ejemplo 3E8.")
+
+# Ejemplo real de número muy pequeño en física
+print("¿Cómo se puede escribir la constante de Planck en Python?")
+print("Se puede escribir como 6.62607E-34 usando notación científica.")
+
+# Aunque 4 y 4.0 parecen iguales, Python los considera tipos diferentes
+print("¿Cuál es la diferencia entre 4 y 4.0?")
+print("4 es entero y 4.0 es un número flotante.")
+
+# -----------------------------------------------------
+
+print("¿Qué es una cadena en Python?")
+print("Es un tipo de dato usado para representar texto y siempre se escribe entre comillas.")
+
+# El carácter \ se llama carácter de escape y permite usar símbolos especiales
+print("¿Cómo se puede escribir una comilla dentro de una cadena?")
+print("Usando el carácter de escape \\ o combinando comillas simples y dobles.")
+
+# Ejemplo con comillas dentro de una cadena
+print("Ejemplo:")
+print("Me gusta \"Monty Python\"")
+
+# Una cadena puede existir aunque no tenga ningún carácter
+print("¿Puede existir una cadena vacía?")
+print("Sí, se puede escribir como '' o \"\".")
+
+# -----------------------------------------------------
+
+print("¿Qué son los valores booleanos?")
+print("Son valores lógicos que representan verdadero o falso: True y False.")
+
+# Los valores booleanos provienen del álgebra de George Boole
+print("¿Quién inspiró el concepto de valores booleanos?")
+print("George Boole, creador del álgebra booleana.")
+
+# En muchos lenguajes True equivale a 1 y False a 0
+print("¿Qué representan True y False en términos numéricos?")
+print("True equivale a 1 y False equivale a 0.")
