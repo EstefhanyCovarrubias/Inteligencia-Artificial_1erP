@@ -1,0 +1,114 @@
+#2.7 Jerarquia excepxiones 
+
+# ------------------------------------------------------------
+# EJEMPLO 1: jerarquia de excepciones
+
+# estructura simplificada de la jerarquia
+# BaseException
+#    └── Exception
+#         └── ArithmeticError
+#              └── ZeroDivisionError
+
+try:
+    y = 1 / 0  # genera ZeroDivisionError
+
+except ArithmeticError:
+    # ArithmeticError es mas general y captura ZeroDivisionError
+    print("Ocurrio un problema aritmetico.")
+
+print("FIN DEL EJEMPLO 1\n")
+
+
+# ------------------------------------------------------------
+# EJEMPLO 2: orden de los bloques except
+
+try:
+    y = 1 / 0
+
+except ZeroDivisionError:
+    # se ejecuta primero porque es la excepcion mas especifica
+    print("Division entre cero.")
+
+except ArithmeticError:
+    # no se ejecuta porque el anterior ya capturo el error
+    print("Problema aritmetico.")
+
+print("FIN DEL EJEMPLO 2\n")
+
+
+# ------------------------------------------------------------
+# EJEMPLO 3: capturar varias excepciones juntas
+
+try:
+    x = int(input("Ingresa un numero: "))
+    result = 10 / x
+
+except (ValueError, ZeroDivisionError):
+    # maneja ambos errores con el mismo bloque
+    print("Error en el numero ingresado.")
+
+print("FIN DEL EJEMPLO 3\n")
+
+
+# ------------------------------------------------------------
+# EJEMPLO 4: excepcion generada dentro de una funcion
+
+def bad_fun(n):
+    return 1 / n  # puede generar ZeroDivisionError
+
+try:
+    bad_fun(0)  # el error ocurre dentro de la funcion
+
+except ArithmeticError:
+    # el error se maneja fuera de la funcion
+    print("La excepcion fue capturada fuera de la funcion.")
+
+print("FIN DEL EJEMPLO 4\n")
+
+
+# ------------------------------------------------------------
+# EJEMPLO 5: usar raise para generar una excepcion manualmente
+
+try:
+    x = int(input("Ingresa un numero positivo: "))
+
+    if x < 0:
+        # genera una excepcion manualmente
+        raise ValueError
+
+    print("Numero correcto.")
+
+except ValueError:
+    print("Error: el numero debe ser positivo.")
+
+print("FIN DEL EJEMPLO 5\n")
+
+
+# ------------------------------------------------------------
+# EJEMPLO 6: re-lanzar una excepcion con raise
+
+try:
+    try:
+        y = 1 / 0
+    except ZeroDivisionError:
+        print("Ocurrio un error, lo enviaremos de nuevo...")
+        raise  # vuelve a generar la misma excepcion
+
+except ZeroDivisionError:
+    print("La excepcion fue capturada nuevamente.")
+
+print("FIN DEL EJEMPLO 6\n")
+
+
+# ------------------------------------------------------------
+# EJEMPLO 7: uso de assert
+
+x = float(input("Ingresa un numero mayor o igual a 0: "))
+
+# assert verifica que la condicion sea verdadera
+assert x >= 0
+
+# si la condicion es falsa se genera AssertionError
+print("La raiz aproximada es:", x ** 0.5)
+
+print("FIN DEL PROGRAMA")
