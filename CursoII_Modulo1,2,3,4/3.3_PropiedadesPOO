@@ -1,0 +1,103 @@
+#3.3 Propiedades de POO
+
+# -----------------------------
+# 1. Variables de instancia
+# -----------------------------
+class ExampleClass:
+    def __init__(self, val=1):
+        # Variable de instancia pública
+        self.first = val
+
+    def set_second(self, val):
+        # Variable de instancia agregada dinámicamente
+        self.second = val
+
+# Crear objetos con diferentes propiedades
+example_object_1 = ExampleClass()
+example_object_2 = ExampleClass(2)
+example_object_2.set_second(3)
+example_object_3 = ExampleClass(4)
+example_object_3.third = 5  # Variable agregada fuera de la clase
+
+# Mostrar variables de instancia de cada objeto
+print("Variables de instancia de example_object_1:", example_object_1.__dict__)
+print("Variables de instancia de example_object_2:", example_object_2.__dict__)
+print("Variables de instancia de example_object_3:", example_object_3.__dict__)
+
+# -----------------------------
+# 2. Variables privadas de instancia
+# -----------------------------
+class ExamplePrivate:
+    def __init__(self, val):
+        # Variable privada (encapsulada)
+        self.__first = val
+
+    def set_second(self, val):
+        self.__second = val
+
+obj_private = ExamplePrivate(10)
+obj_private.set_second(20)
+
+# Mostrar variables de instancia privadas (name mangling de Python)
+print("Privadas de obj_private:", obj_private.__dict__)
+# Acceso "limitado" desde fuera usando _ClassName__VarName
+print("Acceso a __first desde fuera:", obj_private._ExamplePrivate__first)
+
+# -----------------------------
+# 3. Variables de clase
+# -----------------------------
+class ExampleClass2:
+    counter = 0  # Variable de clase
+
+    def __init__(self, val=1):
+        # Variable de instancia privada
+        self.__first = val
+        # Incrementar variable de clase cada vez que se crea un objeto
+        ExampleClass2.counter += 1
+
+# Crear objetos
+obj1 = ExampleClass2()
+obj2 = ExampleClass2(2)
+obj3 = ExampleClass2(4)
+
+# __dict del objeto muestra solo variables de instancia
+print("obj1 __dict__:", obj1.__dict__, "counter:", obj1.counter)
+print("obj2 __dict__:", obj2.__dict__, "counter:", obj2.counter)
+print("obj3 __dict__:", obj3.__dict__, "counter:", obj3.counter)
+
+# Acceso directo a variable de clase sin instancias
+print("Counter desde la clase:", ExampleClass2.counter)
+
+# -----------------------------
+# 4. Comprobando existencia de atributos
+# -----------------------------
+class ExampleCheck:
+    a = 1  # Variable de clase
+
+    def __init__(self):
+        self.b = 2  # Variable de instancia
+
+obj_check = ExampleCheck()
+
+# Usando hasattr() para verificar seguridad antes de acceder
+print("Tiene b?", hasattr(obj_check, 'b'))  # True
+print("Tiene a?", hasattr(obj_check, 'a'))  # True
+print("Clase ExampleCheck tiene b?", hasattr(ExampleCheck, 'b'))  # False
+print("Clase ExampleCheck tiene a?", hasattr(ExampleCheck, 'a'))  # True
+
+# -----------------------------
+# 5. Ejemplo completo con variables de instancia y de clase
+# -----------------------------
+class Sample:
+    gamma = 0  # Variable de clase
+
+    def __init__(self):
+        self.alpha = 1        # Variable de instancia pública
+        self.__delta = 3      # Variable de instancia privada
+
+obj = Sample()
+obj.beta = 2  # Variable de instancia agregada dinámicamente
+
+print("Variables de instancia (obj.__dict__):", obj.__dict__)
+print("Variable de clase gamma:", Sample.gamma)
+
