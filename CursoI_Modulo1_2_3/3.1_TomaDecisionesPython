@@ -1,0 +1,69 @@
+#3.1 Toma de Decisiones en Python
+
+# -----------------------------------------------------
+# Preguntas y Respuestas
+print("¿Qué tipos de respuestas conocen las computadoras?")
+print("Solo dos: True (verdadero) y False (falso).")
+
+# -----------------------------------------------------
+#Operador de igualdad
+
+print("¿Qué hace el operador == en Python?")
+print("Compara dos valores y verifica si son iguales.")
+
+print("¿Cuál es la diferencia entre = y == ?")
+print("= asigna valores a variables, == compara valores.")
+
+# -----------------------------------------------------
+#Ejercicios de comparación
+
+print("¿Cuál es el resultado de 2 == 2 ?")
+print("True")
+
+print("¿Cuál es el resultado de 2 == 2. ?")
+print("True")
+
+print("¿Cuál es el resultado de 1 == 2 ?")
+print("False")
+
+# -----------------------------------------------------
+# Operadores de comparación
+
+print("¿Qué hace el operador != ?")
+print("Compara dos valores y devuelve True si son diferentes.")
+
+print("¿Qué hace el operador > ?")
+print("Verifica si un valor es mayor que otro.")
+
+print("¿Qué hace el operador >= ?")
+print("Verifica si un valor es mayor o igual que otro.")
+
+print("¿Qué hace el operador < ?")
+print("Verifica si un valor es menor que otro.")
+
+print("¿Qué hace el operador <= ?")
+print("Verifica si un valor es menor o igual que otro.")
+
+# -----------------------------------------------------
+# Uso de las respuestas
+print("¿Qué se puede hacer con el resultado de una comparación?")
+print("Se puede guardar en una variable o usarlo para tomar decisiones en el programa.")
+
+# -----------------------------------------------------
+#Sentencia if
+print("¿Para qué sirve la sentencia if?")
+print("Permite ejecutar código solo si una condición es verdadera.")
+
+print("¿Qué hace la sentencia if-else?")
+print("Ejecuta un bloque si la condición es True y otro si es False.")
+
+print("¿Qué hace elif?")
+print("Permite comprobar varias condiciones en orden.")
+
+# -----------------------------------------------------
+# Pseudocódigo
+print("¿Qué es el pseudocódigo?")
+print("Es una forma de describir un algoritmo de manera simple antes de programarlo.")
+
+print("¿Qué es un bucle?")
+print("Es la ejecución repetida de un bloque de código.")
