@@ -1,0 +1,153 @@
+#2.4 Cadenas en acción
+
+# ============================================================
+# comparacion de cadenas, ordenamiento y conversion
+# ============================================================
+
+# las cadenas se pueden comparar usando operadores normales
+print("alpha" == "alpha")
+print("alpha" != "Alpha")
+print("beta" > "Beta")     # mayusculas tienen menor codigo que minusculas
+print("alpha" < "alphabet")  # si una es prefijo de otra, la mas larga es mayor
+
+
+# ------------------------------------------------------------
+# ordenamiento de listas de cadenas
+# ------------------------------------------------------------
+
+greek = ['omega', 'alpha', 'pi', 'gamma']
+
+# sorted() crea una nueva lista ordenada
+sorted_list = sorted(greek)
+
+print("lista original:", greek)
+print("lista ordenada:", sorted_list)
+
+# sort() ordena la lista directamente
+greek.sort()
+print("lista despues de sort():", greek)
+
+
+# ------------------------------------------------------------
+# conversion entre numeros y cadenas
+# ------------------------------------------------------------
+
+# convertir numero a cadena
+num = 13
+text = str(num)
+print("numero a cadena:", text)
+
+# convertir cadena a numero (solo si representa un numero valido)
+s = "14"
+n = int(s)
+f = float(s)
+
+print("cadena a entero:", n)
+print("cadena a flotante:", f)
+
+
+# ============================================================
+# respuestas del cuestionario
+# ============================================================
+
+# pregunta 1
+print("\npregunta 1:")
+print("'smith' > 'Smith' ->", 'smith' > 'Smith')  # verdadera
+
+
+# pregunta 2
+print("\npregunta 2:")
+s1 = '¿Dónde están las nieves de antaño?'
+s2 = s1.split()      # separa palabras en una lista
+s3 = sorted(s2)      # ordena alfabeticamente
+print(s3[1])
+
+
+# pregunta 3
+print("\npregunta 3:")
+s1 = '12.8'
+
+# int('12.8') produce error porque no es entero
+# para que funcione primero se convierte a float
+i = int(float(s1))
+s2 = str(i)
+f = float(s2)
+
+print(s1 == s2)
+
+
+# ============================================================
+# simulador de display de 7 segmentos usando leds
+# ============================================================
+
+# cada numero tiene un patron de 5 filas
+digits = [
+    ["###",
+     "# #",
+     "# #",
+     "# #",
+     "###"],
+
+    ["  #",
+     "  #",
+     "  #",
+     "  #",
+     "  #"],
+
+    ["###",
+     "  #",
+     "###",
+     "#  ",
+     "###"],
+
+    ["###",
+     "  #",
+     "###",
+     "  #",
+     "###"],
+
+    ["# #",
+     "# #",
+     "###",
+     "  #",
+     "  #"],
+
+    ["###",
+     "#  ",
+     "###",
+     "  #",
+     "###"],
+
+    ["###",
+     "#  ",
+     "###",
+     "# #",
+     "###"],
+
+    ["###",
+     "  #",
+     "  #",
+     "  #",
+     "  #"],
+
+    ["###",
+     "# #",
+     "###",
+     "# #",
+     "###"],
+
+    ["###",
+     "# #",
+     "###",
+     "  #",
+     "###"]
+]
+
+num = input("\ningresa un numero: ")
+
+# se imprime fila por fila para formar los digitos
+for row in range(5):
+    line = ""
+    for digit in num:
+        line += digits[int(digit)][row] + " "
+    print(line)
