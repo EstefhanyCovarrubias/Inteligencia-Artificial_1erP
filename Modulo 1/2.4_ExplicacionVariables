@@ -1,0 +1,128 @@
+#2.4 Variables de python
+
+# -----------------------------------------------------
+# Variables – cajas con forma de datos
+
+print("¿Qué es una variable en Python?")
+print("Es un contenedor que guarda datos y cuyo valor puede cambiar durante el programa.")
+
+print("¿Cuáles son los elementos de una variable?")
+print("Un nombre y un valor almacenado dentro de ella.")
+
+print("¿Para qué sirven las variables?")
+print("Para guardar resultados o datos y reutilizarlos en otras operaciones del programa.")
+
+
+# -----------------------------------------------------
+#Nombres de Variables
+
+print("¿Qué caracteres pueden usarse en los nombres de variables?")
+print("Letras, números y el guion bajo (_).")
+
+print("¿Con qué debe comenzar el nombre de una variable?")
+print("Debe comenzar con una letra o guion bajo.")
+
+print("¿Las mayúsculas y minúsculas importan en Python?")
+print("Sí, Python distingue entre mayúsculas y minúsculas, por lo que var y Var son diferentes.")
+
+print("¿Se pueden usar palabras reservadas como nombres de variables?")
+print("No, porque tienen un significado especial en el lenguaje.")
+
+# Comentario explicativo:
+# Las palabras reservadas son comandos del lenguaje como if, for, while, import, etc.
+# No pueden utilizarse como nombres de variables.
+
+
+# -----------------------------------------------------
+#Cómo crear una variable
+
+print("¿Cómo se crea una variable en Python?")
+print("Se crea cuando se le asigna un valor usando el operador =.")
+
+print("¿Es necesario declarar una variable antes de usarla?")
+print("No, Python la crea automáticamente cuando se le asigna un valor.")
+
+# Ejemplo sencillo explicado
+# var = 1
+# print(var)
+# Aquí se crea la variable "var" y luego se imprime su valor.
+
+
+# -----------------------------------------------------
+#Cómo emplear una variable
+
+print("¿Qué sucede si se usa una variable que no tiene valor?")
+print("El programa genera un error porque la variable no existe o no fue definida.")
+
+print("¿Cómo se puede mostrar texto junto con variables?")
+print("Usando print() y combinando texto con variables.")
+
+
+# -----------------------------------------------------
+# Asignar un nuevo valor a una variable
+
+print("¿Qué hace el operador de asignación = ?")
+print("Asigna el valor de la derecha a la variable de la izquierda.")
+
+print("¿Se puede cambiar el valor de una variable?")
+print("Sí, una variable puede recibir nuevos valores durante el programa.")
+
+# Ejemplo conceptual
+# var = 1
+# var = var + 1
+# Esto toma el valor actual de var, le suma 1 y guarda el nuevo resultado.
+
+
+# -----------------------------------------------------
+#Resolver problemas matemáticos con variables
+
+print("¿Cómo ayudan las variables a resolver problemas matemáticos?")
+print("Permiten guardar números y realizar operaciones para obtener resultados.")
+
+print("¿Qué operador se usa para potencias en Python?")
+print("El operador **.")
+
+# Comentario:
+# Por ejemplo, el teorema de Pitágoras usa potencias para calcular la hipotenusa.
+
+
+# -----------------------------------------------------
+# Ejemplo de variables (manzanas)
+
+print("¿Para qué sirve usar varias variables en un problema?")
+print("Permite guardar distintos datos y luego combinarlos en cálculos.")
+
+
+# -----------------------------------------------------
+# Operadores abreviados
+
+print("¿Qué son los operadores abreviados?")
+print("Son formas cortas de actualizar una variable usando su propio valor.")
+
+print("Da un ejemplo de operador abreviado.")
+print("x += 1 incrementa el valor de x en uno.")
+
+# Comentario:
+# x += 1 es equivalente a escribir:
+# x = x + 1
+
+
+# -----------------------------------------------------
+# Conversión de unidades
+
+print("¿Para qué sirven las variables en conversiones?")
+print("Permiten guardar valores y aplicar fórmulas para convertir unidades.")
+
+print("¿Qué hace la función round()?")
+print("Redondea un número al número de decimales especificado.")
+
+# Ejemplo:
+# round(numero, 2) redondea el número a dos decimales.
+
+
+# -----------------------------------------------------
+# Expresiones matemáticas
+
+print("¿Qué se debe recordar al escribir expresiones matemáticas en Python?")
+print("El operador de multiplicación (*) debe escribirse siempre.")
+
