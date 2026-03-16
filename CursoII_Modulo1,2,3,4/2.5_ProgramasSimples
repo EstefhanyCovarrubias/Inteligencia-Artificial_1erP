@@ -1,0 +1,160 @@
+#2.5 Programas Sencillos
+
+# ============================================================
+# procesamiento de cadenas: programas simples
+# ============================================================
+
+# ------------------------------------------------------------
+# 1. cifrado cesar (version simple)
+# cada letra se mueve una posicion en el alfabeto
+# ------------------------------------------------------------
+message = "AVE CAESAR"
+cipher = ""
+
+for ch in message:
+    if not ch.isalpha():
+        continue
+    ch = ch.upper()
+    code = ord(ch) + 1
+    if code > ord('Z'):
+        code = ord('A')
+    cipher += chr(code)
+
+print("cifrado:", cipher)
+
+
+# ------------------------------------------------------------
+# 2. descifrar cifrado cesar
+# ------------------------------------------------------------
+message = cipher
+plain = ""
+
+for ch in message:
+    code = ord(ch) - 1
+    if code < ord('A'):
+        code = ord('Z')
+    plain += chr(code)
+
+print("descifrado:", plain)
+
+
+# ------------------------------------------------------------
+# 3. procesador de numeros
+# suma numeros escritos en una linea
+# ------------------------------------------------------------
+line = "10 20 30 5.5"
+numbers = line.split()
+
+total = 0
+
+for n in numbers:
+    total += float(n)
+
+print("suma:", total)
+
+
+# ------------------------------------------------------------
+# 4. validador simple de IBAN
+# ------------------------------------------------------------
+iban = "GB72HBZU70067212125300"
+
+iban = iban.replace(" ", "")
+
+iban = iban[4:] + iban[:4]
+
+iban2 = ""
+
+for ch in iban:
+    if ch.isdigit():
+        iban2 += ch
+    else:
+        iban2 += str(ord(ch) - 55)
+
+if int(iban2) % 97 == 1:
+    print("IBAN valido")
+else:
+    print("IBAN invalido")
+
+
+# ============================================================
+# LAB 1: cifrado cesar mejorado
+# permite desplazamiento 1..25 y mantiene mayusculas/minusculas
+# ============================================================
+
+text = "abcxyzABCxyz 123"
+shift = 2
+result = ""
+
+for ch in text:
+    if ch.isalpha():
+        base = ord('A') if ch.isupper() else ord('a')
+        # calcula desplazamiento dentro del alfabeto
+        result += chr((ord(ch) - base + shift) % 26 + base)
+    else:
+        result += ch
+
+print("cifrado mejorado:", result)
+
+
+# ============================================================
+# LAB 2: palindromo
+# ============================================================
+
+text = "Ten animals I slam in a net"
+
+clean = text.replace(" ", "").lower()
+
+if clean != "" and clean == clean[::-1]:   # [::-1] invierte la cadena
+    print("es un palindromo")
+else:
+    print("no es un palindromo")
+
+
+# ============================================================
+# LAB 3: anagramas
+# ============================================================
+
+w1 = "listen"
+w2 = "silent"
+
+a = sorted(w1.replace(" ", "").lower())
+b = sorted(w2.replace(" ", "").lower())
+
+if a and b and a == b:
+    print("anagramas")
+else:
+    print("no son anagramas")
+
+
+# ============================================================
+# LAB 4: digito de la vida
+# ============================================================
+
+birth = "19991229"
+
+total = sum(int(d) for d in birth)
+
+while total > 9:   # se repite hasta obtener un solo digito
+    total = sum(int(d) for d in str(total))
+
+print("digito de la vida:", total)
+
+
+# ============================================================
+# LAB 5: encontrar palabra dentro de otra cadena
+# ============================================================
+
+word = "donor"
+text = "Nabucodonosor".lower()
+
+pos = 0
+found = True
+
+for ch in word:
+    pos = text.find(ch, pos)
+    if pos == -1:
+        found = False
+        break
+    pos += 1
+
+print("palabra encontrada:", "si" if found else "no")
