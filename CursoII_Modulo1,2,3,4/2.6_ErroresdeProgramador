@@ -1,0 +1,84 @@
+#2.5 los errores de los programadores
+import math
+# ------------------------------------------------------------
+# EJEMPLO 1: posibles errores en un programa
+
+try:
+    # el usuario puede escribir cualquier cosa
+    x = float(input("Ingresa un numero: "))
+
+    # sqrt solo funciona con numeros >= 0
+    y = math.sqrt(x)
+
+    print("La raiz cuadrada es:", y)
+
+except ValueError:
+    # ocurre si no se puede convertir a numero
+    print("Error: debes ingresar un numero valido.")
+
+except:
+    # captura cualquier otro error
+    print("Ocurrio un error inesperado.")
+
+
+print("\n--- ejemplo terminado ---\n")
+
+
+# ------------------------------------------------------------
+# EJEMPLO 2: error por division entre cero
+
+try:
+    x = int(input("Ingresa un numero entero: "))
+
+    result = 1 / x  # si x = 0 ocurre ZeroDivisionError
+
+    print("Resultado:", result)
+
+except ZeroDivisionError:
+    print("No puedes dividir entre cero.")
+
+except ValueError:
+    print("Debes ingresar un numero entero.")
+
+
+print("\n--- ejemplo terminado ---\n")
+
+
+# ------------------------------------------------------------
+# EJEMPLO 3: error de indice en listas
+
+try:
+    numbers = [10, 20, 30]
+
+    # la lista solo tiene indices 0,1,2
+    print(numbers[5])  # provoca IndexError
+
+except IndexError:
+    print("Indice fuera del rango de la lista.")
+
+
+print("\n--- ejemplo terminado ---\n")
+
+
+# ------------------------------------------------------------
+# EJEMPLO 4: manejo de multiples excepciones
+
+try:
+    x = int(input("Ingresa un numero para dividir 1/x: "))
+    y = 1 / x
+
+    print("Resultado:", y)
+
+except ValueError:
+    # ocurre si el usuario escribe texto
+    print("Debes ingresar un numero entero.")
+
+except ZeroDivisionError:
+    # ocurre si x = 0
+    print("No puedes dividir entre cero.")
+
+except:
+    # captura cualquier otro error no previsto
+    print("Algo salio mal.")
+
+print("FIN DEL PROGRAMA")
