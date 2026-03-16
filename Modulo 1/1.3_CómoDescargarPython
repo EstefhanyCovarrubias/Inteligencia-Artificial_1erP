@@ -1,0 +1,20 @@
+#1.3 Descargar Python e instalación 
+
+
+print("=== Introducción a Python ===")
+
+# al agregar \n se realiza un salto de linea al imprimir 
+print("\n1.3.1 ¿Cómo obtener Python?")
+print("Python puede instalarse según el sistema operativo. En Linux suele venir instalado y en Windows o macOS se descarga desde el sitio oficial python.org.")
+
+print("\n1.3.2 ¿Cómo descargar e instalar Python?")
+print("Se descarga desde python.org, se ejecuta el instalador y en Windows es importante marcar la opción 'Add Python to PATH' para facilitar su uso.")
+
+print("\n1.3.3 ¿Cómo comenzar a trabajar con Python?")
+print("Para empezar se necesita un editor de código, una consola para ejecutarlo y un depurador. Python incluye IDLE, un entorno simple para programar y aprender.")
+
+print("\n1.3.4 ¿Cuál es el primer programa en Python?")
+print("El primer programa puede ser print('Hisssssss...'), que muestra un mensaje en pantalla al ejecutarse.")
+
+print("\n1.3.5 ¿Cómo identificar y corregir errores en Python?")
+print("Si el código tiene errores de sintaxis o escritura, el intérprete mostrará mensajes indicando dónde ocurrió el error para poder corregirlo.")
