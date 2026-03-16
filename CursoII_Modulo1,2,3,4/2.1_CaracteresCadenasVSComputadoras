@@ -1,0 +1,90 @@
+#2.1 Caracteres y Cadenas versus las Computadoras
+
+# ------------------------------------------------------------
+# 1. como entienden los caracteres las computadoras
+# las computadoras guardan cada caracter como un numero.
+# ese numero se llama punto de codigo.
+
+print("codigo de algunos caracteres:")
+
+print("A =", ord("A"))     # ord() convierte caracter -> numero
+print("a =", ord("a"))
+print("espacio =", ord(" "))
+
+
+# ------------------------------------------------------------
+# 2. convertir numeros en caracteres
+# chr() hace lo contrario: numero -> caracter
+
+print("\ncaracter desde numero:")
+
+print("65 ->", chr(65))
+print("97 ->", chr(97))
+print("32 ->", chr(32))
+
+
+# ------------------------------------------------------------
+# 3. ASCII
+# ASCII es un sistema que asigna numeros a caracteres.
+# usa hasta 256 valores, pero los primeros 128 son los
+# mas comunes (letras, numeros, simbolos).
+
+print("\ndiferencia entre 'a' y 'A':")
+print(ord("a") - ord("A"))   # curiosamente es 32
+
+
+# ------------------------------------------------------------
+# 4. unicode
+# ASCII no alcanza para todos los idiomas.
+# unicode es un sistema mas grande que permite
+# representar caracteres de casi todos los idiomas.
+
+print("\nejemplos unicode:")
+
+print("latino:", "A")
+print("acentuado:", "á")
+print("cirilico:", "Ж")
+print("chino:", "汉")
+
+
+print("\npuntos de codigo unicode:")
+
+print("A ->", ord("A"))
+print("á ->", ord("á"))
+print("Ж ->", ord("Ж"))
+print("汉 ->", ord("汉"))
+
+
+# ------------------------------------------------------------
+# 5. utf-8
+# utf-8 es una forma de guardar caracteres unicode
+# usando diferente cantidad de bytes para ahorrar memoria.
+
+
+# ------------------------------------------------------------
+# 6. python 3 soporta unicode
+# se pueden usar caracteres de diferentes idiomas
+# en textos sin problema.
+
+nombre = "José"
+ciudad = "東京"   # tokyo en japones
+
+print("\nejemplo de texto internacional:")
+print("nombre:", nombre)
+print("ciudad:", ciudad)
+
+
+# ------------------------------------------------------------
+# 7. BOM
+# BOM (byte order mark) es una marca al inicio de algunos
+# archivos de texto que indica el tipo de codificacion.
+
+
+# ============================================================
+# resumen corto
+# ============================================================
+# caracter -> numero (punto de codigo)
+# ASCII -> sistema antiguo
+# unicode -> sistema moderno para todos los idiomas
+# utf-8 -> forma eficiente de guardar unicode
+# python 3 -> compatible con unicode
