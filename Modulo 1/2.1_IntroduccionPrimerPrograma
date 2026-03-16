@@ -1,0 +1,37 @@
+# 2.1 Introducción sobre cómo hacer un programa en python
+
+
+# La función print() se usa para mostrar texto en la consola
+
+print("¿Qué es el primer programa en Python?")
+print("Es un programa simple que utiliza la función print() para mostrar un mensaje en la pantalla.")
+
+print("¿Qué es la función print()?")
+print("Es una función integrada de Python que permite mostrar texto o datos en la consola.")
+
+print("¿Qué son los argumentos de una función?")
+print("Son los valores que se colocan dentro de los paréntesis para que la función realice una acción.")
+
+print("¿Qué es la invocación de una función?")
+print("Es el proceso de llamar una función usando su nombre y paréntesis.")
+
+print("¿Qué efecto tiene la función print()?")
+print("Muestra en la pantalla los datos o textos que se colocan como argumentos.")
+
+print("¿Qué son las instrucciones en Python?")
+print("Son comandos que el programa ejecuta para realizar una tarea específica.")
+
+print("¿Qué es el carácter de escape \\n?")
+print("Es un símbolo especial que indica que el texto debe continuar en una nueva línea.")
+
+print("¿Qué pasa cuando print() tiene varios argumentos?")
+print("Los muestra en la misma línea separados automáticamente por un espacio.")
+
+print("2.1.9 ¿Qué son los argumentos posicionales?")
+print("Son argumentos cuyo significado depende del orden en el que aparecen en la función.")
+
+print("¿Qué son los argumentos de palabra clave?")
+print("Son argumentos identificados por un nombre como end o sep para cambiar cómo funciona print().")
+
+print("¿Para qué sirven sep y end?")
+print("sep cambia el separador entre palabras y end define qué se imprime al final de la línea.")
