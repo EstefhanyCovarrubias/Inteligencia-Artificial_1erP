@@ -1,0 +1,157 @@
+#3.4 Listas en python
+# Ejemplos básicos para entender cómo funcionan
+
+# -----------------------------------------------------
+# Crear una lista
+
+numbers = [10, 5, 7, 2, 1]  # lista con 5 números
+
+print("Lista original:", numbers)
+
+
+# -----------------------------------------------------
+# Acceder a elementos de la lista (indexación)
+# Los índices empiezan en 0
+
+print("Primer elemento:", numbers[0])
+print("Tercer elemento:", numbers[2])
+
+
+# -----------------------------------------------------
+# Cambiar valores en la lista
+
+numbers[0] = 111  # cambiamos el primer elemento
+print("Lista después de cambiar el primer elemento:", numbers)
+
+
+# -----------------------------------------------------
+# Copiar valores dentro de la lista
+
+numbers[1] = numbers[4]  # copia el quinto valor en la segunda posición
+print("Lista después de copiar un valor:", numbers)
+
+
+# -----------------------------------------------------
+# Longitud de la lista con len()
+
+
+print("Longitud de la lista:", len(numbers))
+
+
+# -----------------------------------------------------
+# Eliminar elementos con del
+
+del numbers[1]  # elimina el segundo elemento
+print("Lista después de eliminar un elemento:", numbers)
+print("Nueva longitud:", len(numbers))
+
+
+# -----------------------------------------------------
+# Índices negativos
+# Sirven para acceder desde el final de la lista
+
+print("Último elemento:", numbers[-1])
+print("Penúltimo elemento:", numbers[-2])
+
+
+# -----------------------------------------------------
+# Agregar elementos a una lista
+
+numbers.append(100)  # agrega un valor al final
+print("Después de append:", numbers)
+
+numbers.insert(1, 333)  # inserta el valor en la posición 1
+print("Después de insert:", numbers)
+
+
+# -----------------------------------------------------
+# Crear una lista usando un bucle
+
+my_list = []  # lista vacía
+
+for i in range(5):
+    my_list.append(i + 1)  # agrega números del 1 al 5
+
+print("Lista creada con bucle:", my_list)
+
+
+# -----------------------------------------------------
+# Recorrer una lista con for
+
+total = 0
+
+for number in my_list:  # recorre cada elemento
+    total += number
+
+print("Suma de los elementos:", total)
+
+
+# -----------------------------------------------------
+# Intercambiar valores
+# Python permite intercambiar valores fácilmente
+
+a = 1
+b = 2
+
+a, b = b, a  # intercambio
+
+print("a:", a, "b:", b)
+
+
+# -----------------------------------------------------
+#Invertir una lista usando un bucle
+
+my_list = [10, 1, 8, 3, 5]
+
+length = len(my_list)
+
+for i in range(length // 2):
+    # intercambia los elementos del inicio con los del final
+    my_list[i], my_list[length - i - 1] = my_list[length - i - 1], my_list[i]
+
+print("Lista invertida:", my_list)
+
+# -------------------------------------------------------
+# LAB 1 - Sombrero
+
+hat_list = [1, 2, 3, 4, 5]
+
+# pedir número al usuario
+number = int(input("Introduce un número para reemplazar el centro: "))
+
+# reemplazar el número central
+hat_list[2] = number
+
+# eliminar el último elemento
+del hat_list[4]
+
+# imprimir longitud de la lista
+print("Longitud de la lista:", len(hat_list))
+
+print("Lista final:", hat_list)
+
+
+# -------------------------------------------------------
+# LAB 2 - Beatles
+
+beatles = []  # lista vacía
+
+# agregar miembros principales
+beatles.append("John Lennon")
+beatles.append("Paul McCartney")
+beatles.append("George Harrison")
+
+# pedir dos miembros más
+for i in range(2):
+    name = input("Introduce otro miembro de la banda: ")
+    beatles.append(name)
+
+# eliminar Stu Sutcliffe y Pete Best
+del beatles[3]
+del beatles[3]
+
+# agregar Ringo Starr al principio
+beatles.insert(0, "Ringo Starr")
+
+print("Miembros finales de la banda:", beatles)
+print("Número de miembros:", len(beatles))
