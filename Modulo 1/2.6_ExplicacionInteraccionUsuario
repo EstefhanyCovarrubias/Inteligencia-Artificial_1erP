@@ -1,0 +1,141 @@
+#Interaccion con el ususario
+
+# -----------------------------------------------------
+#Comentarios – ¿por qué, cuándo y dónde?
+
+print("¿Qué es un comentario en Python?")
+print("Es un texto en el código que sirve para explicar el programa y Python lo ignora al ejecutarlo.")
+
+print("¿Para qué sirven los comentarios?")
+print("Para explicar el funcionamiento del código, documentarlo y ayudar a quienes lo lean.")
+
+print("¿Cómo se escribe un comentario en Python?")
+print("Se coloca el símbolo # al inicio del texto del comentario.")
+
+# Todo lo que esté después del símbolo # en una línea
+# es ignorado por Python durante la ejecución.
+
+print("¿Hasta dónde se extiende un comentario?")
+print("Desde el símbolo # hasta el final de la línea.")
+
+print("¿Cómo se escriben comentarios de varias líneas?")
+print("Se coloca el símbolo # al inicio de cada línea.")
+
+print("¿Qué es un nombre de variable auto-comentable?")
+print("Un nombre claro que describe su función, como square_area.")
+
+
+# -----------------------------------------------------
+# Marcar fragmentos de código
+
+print("¿Para qué más se pueden usar los comentarios?")
+print("Para desactivar temporalmente partes del código durante pruebas.")
+
+# Ejemplo conceptual:
+# x = 1
+# y = 2
+# y = y + x   <- si está comentado no se ejecuta
+
+print("¿Qué atajo permite comentar varias líneas rápidamente?")
+print("CTRL + / en Windows o CMD + / en Mac.")
+
+
+# -----------------------------------------------------
+# Uso correcto de comentarios
+
+print("¿Por qué es importante usar comentarios?")
+print("Porque facilitan entender y mantener el código.")
+
+print("¿Qué recomiendan los buenos programadores?")
+print("Explicar partes importantes del código y usar nombres de variables claros.")
+
+print("¿Qué problema puede causar un comentario incorrecto?")
+print("Puede confundir a quienes lean el código.")
+
+
+# -----------------------------------------------------
+
+# La función input()
+
+print("¿Para qué sirve la función input()? ")
+print("Permite recibir datos que el usuario escribe en la consola.")
+
+print("¿Qué hace print() en comparación con input()? ")
+print("print() muestra datos en pantalla e input() recibe datos del usuario.")
+
+print("¿Por qué es importante usar input()?")
+print("Porque permite crear programas interactivos.")
+
+# Ejemplo conceptual
+# anything = input()
+# print(anything)
+
+
+# -----------------------------------------------------
+# Función input() con argumento
+
+print("¿Puede input() mostrar un mensaje antes de recibir datos?")
+print("Sí, colocando una cadena dentro de los paréntesis.")
+
+# Ejemplo:
+# nombre = input("Escribe tu nombre: ")
+
+
+# -----------------------------------------------------
+# Resultado de input()
+
+print("¿Qué tipo de dato devuelve la función input()? ")
+print("Devuelve siempre una cadena de texto (string).")
+
+print("¿Se pueden hacer operaciones matemáticas directamente con input()? ")
+print("No, porque devuelve texto y no números.")
+
+
+# -----------------------------------------------------
+# Operaciones prohibidas
+
+print("¿Qué ocurre si se intenta hacer operaciones matemáticas con texto?")
+print("Python genera un error de tipo porque no puede operar cadenas como números.")
+
+
+# -----------------------------------------------------
+# Conversión de tipos
+
+print("¿Qué función convierte texto a número entero?")
+print("La función int().")
+
+print("¿Qué función convierte texto a número decimal?")
+print("La función float().")
+
+# Ejemplo conceptual
+# numero = int(input("Escribe un número: "))
+
+
+# -----------------------------------------------------
+#Más sobre input()
+
+print("¿Qué permiten hacer input(), int() y float() juntos?")
+print("Crear programas que reciben números, los procesan y muestran resultados.")
+
+print("¿Para qué se usan variables en estos programas?")
+print("Para guardar valores introducidos y resultados de cálculos.")
+
+
+# -----------------------------------------------------
+#Operadores con cadenas
+
+print("¿Qué hace el operador + cuando se usa con cadenas?")
+print("Concatena o une dos cadenas de texto.")
+
+print("¿Qué hace el operador * con una cadena y un número?")
+print("Repite la cadena el número de veces indicado.")
+
+# Ejemplo conceptual
+# "Hola" * 3 produce "HolaHolaHola"
+
+
+# -----------------------------------------------------
+# Conversión a cadena
+
+print("¿Qué hace la función str()? ")
+print("Convierte números u otros datos en cadenas de texto.")
