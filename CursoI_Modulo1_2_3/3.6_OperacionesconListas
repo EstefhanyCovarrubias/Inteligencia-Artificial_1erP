@@ -1,0 +1,159 @@
+#3.6 Operaciones con listas - MEMORIA, REBANADAS Y OPERADORES
+
+
+# -----------------------------------------------------
+# Cómo funcionan las listas en memoria
+
+list_1 = [1]  # creamos una lista con un elemento
+list_2 = list_1  # NO copia la lista, solo referencia la misma memoria
+
+list_1[0] = 2  # cambiamos el valor en list_1
+
+print("list_1:", list_1)
+print("list_2:", list_2)  # también cambia porque ambas apuntan a la misma lista
+
+
+# -----------------------------------------------------
+# Copiar una lista correctamente usando rebanadas
+
+list_1 = [1]
+list_2 = list_1[:]  # crea una copia real de la lista
+
+list_1[0] = 2  # cambiamos list_1
+
+print("list_1:", list_1)
+print("list_2:", list_2)  # no cambia porque es una copia independiente
+
+
+# -----------------------------------------------------
+# Rebanadas (slices) de listas
+
+my_list = [10, 8, 6, 4, 2]
+
+# copia solo algunos elementos
+new_list = my_list[1:3]  # desde índice 1 hasta 2
+
+print("Lista original:", my_list)
+print("Rebanada:", new_list)
+
+
+# -----------------------------------------------------
+# Rebanadas con índices negativos
+
+
+my_list = [10, 8, 6, 4, 2]
+
+new_list = my_list[1:-1]  # desde índice 1 hasta el penúltimo
+
+print("Rebanada con índices negativos:", new_list)
+
+
+# -----------------------------------------------------
+# Rebanadas omitiendo inicio o final
+
+my_list = [10, 8, 6, 4, 2]
+
+print("Primeros elementos:", my_list[:3])  # desde el inicio
+print("Últimos elementos:", my_list[3:])   # hasta el final
+print("Copia completa:", my_list[:])       # copia de toda la lista
+
+
+# -----------------------------------------------------
+# Eliminar elementos con del usando rebanadas
+
+my_list = [10, 8, 6, 4, 2]
+
+del my_list[1:3]  # elimina elementos del índice 1 al 2
+
+print("Después de eliminar una parte:", my_list)
+
+
+# eliminar todos los elementos
+my_list = [10, 8, 6, 4, 2]
+
+del my_list[:]
+
+print("Lista vacía:", my_list)
+
+
+# -----------------------------------------------------
+# Eliminar completamente una lista
+
+my_list = [10, 8, 6, 4, 2]
+
+del my_list  # elimina la lista de la memoria
+
+# print(my_list)  # causaría error porque ya no existe
+
+
+# -----------------------------------------------------
+# Operadores in y not in
+# Sirven para comprobar si un valor está en una lista
+
+my_list = [1, 2, 3, 4, 5]
+
+print(3 in my_list)      # True
+print(10 in my_list)     # False
+print(10 not in my_list) # True
+
+
+# -----------------------------------------------------
+# Encontrar el número mayor de una lista
+my_list = [17, 3, 11, 5, 1, 9, 7, 15, 13]
+
+largest = my_list[0]  # asumimos que el primero es el mayor
+
+for number in my_list:
+    if number > largest:
+        largest = number
+
+print("Número mayor:", largest)
+
+
+# -----------------------------------------------------
+# Buscar un elemento en una lista
+
+my_list = [1,2,3,4,5,6,7,8,9,10]
+
+to_find = 5
+found = False
+
+for i in range(len(my_list)):
+    if my_list[i] == to_find:
+        found = True
+        break
+
+if found:
+    print("Elemento encontrado en el índice:", i)
+else:
+    print("Elemento no encontrado")
+
+
+# -----------------------------------------------------
+# Comparar listas (ejemplo tipo lotería)
+
+drawn = [5, 11, 9, 42, 3, 49]  # números sorteados
+bets = [3, 7, 11, 42, 34, 49]  # números apostados
+
+hits = 0
+
+for number in bets:
+    if number in drawn:
+        hits += 1
+
+print("Número de aciertos:", hits)
+
+
+# -----------------------------------------------------
+# LAB - Eliminar números repetidos de una lista
+
+my_list = [1, 2, 2, 3, 4, 4, 5, 1, 6]
+
+unique_list = []  # lista para guardar números sin repetir
+
+for number in my_list:
+    if number not in unique_list:
+        unique_list.append(number)
+
+print("Lista original:", my_list)
+print("Lista sin repetidos:", unique_list)
