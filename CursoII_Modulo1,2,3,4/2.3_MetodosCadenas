@@ -1,0 +1,90 @@
+#2.3 Metodos d cadenas
+
+# ============================================================
+# metodos de cadenas en python (teoria + ejemplos)
+# ============================================================
+
+# las cadenas en python son inmutables, por lo que los metodos
+# no modifican la cadena original, devuelven una nueva
+
+
+# capitalize() -> primera letra mayuscula, resto minusculas
+text = "hola mundo"
+print("capitalize:", text.capitalize())
+
+
+# center() -> centra el texto en un ancho determinado
+print("center:", "python".center(20))
+print("center con *:", "python".center(20, "*"))
+
+
+# endswith() -> verifica si la cadena termina con algo
+print("endswith:", "archivo.py".endswith(".py"))
+
+
+# find() -> busca una subcadena y devuelve su posicion
+# si no existe devuelve -1
+print("find:", "banana".find("na"))
+print("find no encontrado:", "banana".find("x"))
+
+
+# metodos de verificacion
+print("isalnum:", "abc123".isalnum())   # letras o numeros
+print("isalpha:", "python".isalpha())   # solo letras
+print("isdigit:", "12345".isdigit())    # solo numeros
+print("islower:", "python".islower())   # minusculas
+print("isspace:", "   ".isspace())      # espacios
+print("isupper:", "PYTHON".isupper())   # mayusculas
+
+
+# join() une elementos de una lista usando un separador
+words = ["python", "java", "c++"]
+print("join:", ",".join(words))
+
+
+# lower() convierte todo a minusculas
+print("lower:", "PYTHON ES UTIL".lower())
+
+
+# lstrip() elimina caracteres del inicio
+text = "   hola"
+print("lstrip:", text.lstrip())
+
+
+# replace() reemplaza una parte de la cadena
+print("replace:", "hola mundo".replace("hola", "hello"))
+
+
+# rfind() busca desde el final de la cadena
+print("rfind:", "banana".rfind("na"))
+
+
+# rstrip() elimina caracteres del final
+text = "hola   "
+print("rstrip:", text.rstrip())
+
+
+# split() divide una cadena en una lista
+sentence = "python es facil aprender"
+print("split:", sentence.split())
+
+
+# startswith() verifica si inicia con cierta palabra
+print("startswith:", "python3".startswith("python"))
+
+
+# strip() elimina espacios al inicio y al final
+text = "   python   "
+print("strip:", "[" + text.strip() + "]")
+
+
+# swapcase() intercambia mayusculas por minusculas
+print("swapcase:", "Hola Mundo".swapcase())
+
+
+# title() pone mayuscula en la primera letra de cada palabra
+print("title:", "python es muy util".title())
+
+
+# upper() convierte todo a mayusculas
+print("upper:", "python es poderoso".upper())
