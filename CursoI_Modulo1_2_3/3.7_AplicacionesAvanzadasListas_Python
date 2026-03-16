@@ -1,0 +1,189 @@
+#3.7 Aplicaciones avanzadas de listas
+
+# =====================================================
+
+print("¿Qué es una lista dentro de otra lista en Python?")
+print("Es una lista que contiene otras listas como elementos, lo que permite crear estructuras más complejas.")
+
+# -----------------------------------------------------
+# Ejemplo simple de lista dentro de lista
+
+print("\n¿Puedes dar un ejemplo de una lista dentro de otra lista?")
+print("Sí, por ejemplo una matriz o tablero donde cada fila es una lista.")
+
+matrix = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+]
+
+print("Ejemplo de matriz:", matrix)
+
+
+# --------------------------------------------------------
+# Comprensión de listas 
+
+print("\n¿Qué es una comprensión de listas?")
+print("Es una forma corta y rápida de crear listas automáticamente usando una sola línea de código.")
+
+
+print("\n¿Para qué sirve la comprensión de listas?")
+print("Sirve para generar listas grandes o con patrones sin usar varios ciclos.")
+
+
+# Ejemplo 1
+print("\nEjemplo: generar cuadrados de números")
+
+squares = [x**2 for x in range(10)]
+
+print("Cuadrados:", squares)
+
+
+# Ejemplo 2
+print("\nEjemplo: potencias de 2")
+
+twos = [2**i for i in range(8)]
+
+print("Potencias de 2:", twos)
+
+
+# Ejemplo 3
+print("\nEjemplo: filtrar números impares")
+
+odds = [x for x in squares if x % 2 != 0]
+
+print("Impares:", odds)
+
+
+# ----------------------------------------------------
+# Arreglos bidimensionales (matrices)
+
+print("\n¿Qué es un arreglo bidimensional?")
+print("Es una lista que contiene otras listas y se usa como una tabla o matriz.")
+
+
+print("\n¿Cómo se crea un tablero tipo ajedrez con listas?")
+
+EMPTY = "."
+
+board = [[EMPTY for i in range(8)] for j in range(8)]
+
+print("Tablero creado")
+
+
+# -----------------------------------------------------
+# Acceder a posiciones de la matriz
+
+print("\n¿Cómo se accede a un elemento de una matriz?")
+print("Usando dos índices: uno para la fila y otro para la columna.")
+
+
+board[0][0] = "TORRE"
+board[0][7] = "TORRE"
+board[7][0] = "TORRE"
+board[7][7] = "TORRE"
+
+print("Se colocaron torres en las esquinas")
+
+
+board[4][2] = "CABALLO"
+
+print("Caballo colocado en C4")
+
+
+board[3][4] = "PEON"
+
+print("Peón colocado en E5")
+
+
+# -----------------------------------------------------
+# Aplicación: registro de temperaturas 
+print("\n¿Para qué sirven las listas multidimensionales en aplicaciones reales?")
+print("Sirven para guardar datos organizados como temperaturas por día y hora.")
+
+
+temps = [[0.0 for h in range(24)] for d in range(31)]
+
+
+# -----------------------------------------------------
+# Promedio de temperatura al mediodía
+
+print("\n¿Cómo se calcula el promedio de temperatura al mediodía?")
+
+total = 0.0
+
+for day in temps:
+    total += day[11]   # índice 11 representa el mediodía
+
+average = total / 31
+
+print("Temperatura promedio al mediodía:", average)
+
+
+# -----------------------------------------------------
+# Temperatura más alta del mes
+
+print("\n¿Cómo encontrar la temperatura más alta del mes?")
+
+highest = -100.0
+
+for day in temps:
+    for temp in day:
+        if temp > highest:
+            highest = temp
+
+print("Temperatura más alta:", highest)
+
+
+# -----------------------------------------------------
+# Contar días calurosos
+
+print("\n¿Cómo contar días donde la temperatura al mediodía supera 20°C?")
+
+hot_days = 0
+
+for day in temps:
+    if day[11] > 20.0:
+        hot_days += 1
+
+print("Días calurosos:", hot_days)
+
+
+# -----------------------------------------------------
+# Listas tridimensionales
+
+print("\n¿Qué es una lista tridimensional?")
+print("Es una lista que contiene listas que a su vez contienen otras listas.")
+
+
+print("\nEjemplo: sistema de habitaciones de hotel")
+
+
+# 3 edificios, 15 pisos, 20 habitaciones
+rooms = [[[False for r in range(20)] for f in range(15)] for t in range(3)]
+
+print("Hotel creado con habitaciones disponibles")
+
+
+# Reservar habitación
+rooms[1][9][13] = True
+
+print("Habitación reservada en edificio 2, piso 10, habitación 14")
+
+
+# Desocupar habitación
+rooms[0][4][1] = False
+
+print("Habitación liberada en edificio 1, piso 5, habitación 2")
+
+
+# Verificar habitaciones libres
+print("\n¿Cómo contar habitaciones disponibles en un piso?")
+
+vacancy = 0
+
+for room_number in range(20):
+    if not rooms[2][14][room_number]:
+        vacancy += 1
+
+print("Habitaciones disponibles:", vacancy)
