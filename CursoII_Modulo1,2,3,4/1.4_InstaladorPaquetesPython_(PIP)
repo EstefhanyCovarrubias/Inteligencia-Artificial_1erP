@@ -1,0 +1,117 @@
+#1.4 Instalador de Paquetes de Python (PIP)
+# ecosistema de paquetes de python: teoria + practica
+
+# ------------------------------------------------------------
+# 1. teoria: que es pypi y pip
+
+# pypi (python package index) es un repositorio en internet
+# donde se almacenan miles de paquetes de python creados
+# por programadores de todo el mundo.
+#
+# pip es la herramienta que permite instalar esos paquetes
+# desde la terminal usando internet.
+#
+# ejemplos de comandos que se usan en la consola (no en python):
+#
+# pip --version
+# pip list
+# pip show nombre_paquete
+# pip install nombre_paquete
+# pip install --user nombre_paquete
+# pip install -U nombre_paquete
+# pip uninstall nombre_paquete
+
+
+# ------------------------------------------------------------
+# 2. teoria importante: dependencias
+
+# muchos paquetes necesitan otros paquetes para funcionar.
+# esto se llama dependencias.
+#
+# ejemplo imaginario:
+# paquete A usa paquete B
+# paquete B usa paquete C
+#
+# pip detecta estas dependencias e instala todo automáticamente.
+
+
+# ------------------------------------------------------------
+# 3. ver informacion del sistema de python
+
+import sys
+
+print("version de python:")
+print(sys.version)
+
+print("\nrutas donde python busca modulos:")
+for path in sys.path:
+    print(path)
+
+
+# ------------------------------------------------------------
+# 4. ejemplo practico de uso de un paquete externo
+
+# para ejecutar este ejemplo primero debes instalar pygame
+# desde la terminal:
+#
+# pip install pygame
+#
+# o si no tienes permisos de administrador:
+#
+# pip install --user pygame
+
+import pygame
+
+run = True
+width = 400
+height = 120
+
+# inicializa todos los modulos de pygame
+pygame.init()
+
+# crea una ventana del tamaño indicado
+screen = pygame.display.set_mode((width, height))
+
+# crea una fuente de texto
+font = pygame.font.SysFont(None, 48)
+
+# crea un objeto de texto
+text = font.render("welcome to pygame", True, (255, 255, 255))
+
+# coloca el texto en el centro de la ventana
+screen.blit(
+    text,
+    (
+        (width - text.get_width()) // 2,   # // es division entera
+        (height - text.get_height()) // 2
+    )
+)
+
+# muestra el contenido en pantalla
+pygame.display.flip()
+
+
+# ------------------------------------------------------------
+# 5. bucle principal del programa
+# ------------------------------------------------------------
+# este ciclo mantiene la ventana abierta hasta que el usuario
+# cierre la ventana o presione una tecla
+
+while run:
+    for event in pygame.event.get():
+
+        if (
+            event.type == pygame.QUIT
+            or event.type == pygame.MOUSEBUTTONUP
+            or event.type == pygame.KEYUP
+        ):
+            run = False
+
+
+# ------------------------------------------------------------
+# resumen teorico dentro del codigo
+# ------------------------------------------------------------
+# pypi -> repositorio de paquetes de python en internet
+# pip -> herramienta para instalar paquetes desde la terminal
+# dependencias -> paquetes que otros paquetes necesitan
+# pygame -> ejemplo de paquete externo instalado con pip
