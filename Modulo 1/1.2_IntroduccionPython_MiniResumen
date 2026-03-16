@@ -1,0 +1,19 @@
+#1.2 Introducción a Python 
+
+print("¿Qué hace que Python sea tan especial?")
+print("Python es popular porque es fácil de aprender, enseñar, usar, entender y además es gratuito, abierto y funciona en muchas plataformas.")
+
+print("¿Cuáles son los principales rivales de Python?")
+print("Los competidores más similares a Python son Perl y Ruby, que también son lenguajes de scripting con características parecidas.")
+
+print("¿Dónde podemos ver a Python en acción?")
+print("Python se usa en servicios de internet, desarrollo de software, aplicaciones diarias, ciencia de datos y pruebas de sistemas.")
+
+print("¿Dónde no se usa mucho Python?")
+print("Python se usa poco en programación de bajo nivel como controladores o motores gráficos y en algunas aplicaciones móviles.")
+
+print("¿Qué diferencia hay entre Python 2 y Python 3?")
+print("Python 2 es una versión antigua con soporte limitado, mientras que Python 3 es la versión actual y recomendada para nuevos proyectos.")
+
+print("¿Qué son las implementaciones de Python?")
+print("Son diferentes versiones del lenguaje que permiten ejecutarlo, como CPython, Jython, PyPy, Cython y MicroPython.")
