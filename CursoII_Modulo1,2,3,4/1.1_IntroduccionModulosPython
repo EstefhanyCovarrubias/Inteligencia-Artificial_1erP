@@ -1,5 +1,4 @@
-#1.1 Introducción a los modulos en Python
-
+#1.1_ Modulos de Python
 
 print("¿Por qué el código de un programa tiende a crecer con el tiempo?")
 print("Porque las necesidades de los usuarios cambian y el software debe actualizarse y mejorarse continuamente.")
@@ -32,7 +31,7 @@ print("\n¿Qué es la biblioteca estándar de Python?")
 print("Es una colección de módulos incluidos en Python que ofrecen funciones útiles.")
 
 
-# ------------------------------------------------------
+# -------------------------------------------------------------------
 # Importar módulos
 
 print("\n¿Cómo se importa un módulo en Python?")
@@ -48,7 +47,7 @@ print("Valor de PI:", math.pi)
 print("Seno de PI/2:", math.sin(math.pi/2))
 
 
-# --------------------------------------------------------
+# ----------------------------------------------------------------
 # NAMESPACE
 
 print("\n¿Qué es un namespace?")
@@ -67,7 +66,7 @@ print("Pi del módulo math:", math.pi)
 
 
 # ------------------------------------------------------------
-# Importación selectiva
+# IMPORTACIÓN SELECTIVA
 
 print("\n¿Cómo importar solo algunas funciones de un módulo?")
 print("Usando la sintaxis: from modulo import elemento")
@@ -80,7 +79,7 @@ print("Usando sin directamente:", sin(pi/2))
 
 
 # --------------------------------------------------------------
-# Importar todo (*)
+# IMPORTAR TODO (*)
 
 print("\n¿Qué hace 'from modulo import *'?")
 print("Importa todas las funciones y variables del módulo al programa.")
@@ -92,8 +91,8 @@ from math import *
 print("Coseno de PI:", cos(pi))
 
 
-# --------------------------------------------------------------
-# Alias (Renombrar módulos)ALIAS
+# ---------------------------------------------------------------
+# Alias - Renombrar módulos
 
 print("\n¿Qué es un alias en Python?")
 print("Es renombrar un módulo o función para usar un nombre más corto.")
@@ -104,7 +103,7 @@ import math as m
 print("Usando alias m:", m.sin(m.pi/2))
 
 
-# -------------------------------------------------------------
+# --------------------------------------------------------------
 # Alias en funciones
 
 print("\n¿Se pueden renombrar funciones importadas?")
